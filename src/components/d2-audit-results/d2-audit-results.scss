@@ -1,0 +1,16 @@
+// Useful info: https://foundation.zurb.com/sites/docs/sass.html
+@import 'node_modules/foundation-sites/scss/foundation';
+// @import 'node_modules/foundation-sites/scss/util/util';
+// @import 'node_modules/foundation-sites/scss/settings/settings';
+
+// @include foundation-global-styles;
+// @include foundation-forms;
+// @include foundation-typography;
+@include foundation-table;
+
+th,
+td {
+  font-family: sans-serif;
+  line-height: 1.15;
+  text-size-adjust: 100%;
+}

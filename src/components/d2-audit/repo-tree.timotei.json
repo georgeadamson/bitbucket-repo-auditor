@@ -1,0 +1,1952 @@
+[
+  {
+    "type": "directory",
+    "name": ".",
+    "contents": [
+      {
+        "type": "directory",
+        "name": "unilever-platform",
+        "contents": [
+          {
+            "type": "directory",
+            "name": "app",
+            "contents": [
+              {
+                "type": "directory",
+                "name": "timotei",
+                "contents": [
+                  {
+                    "type": "directory",
+                    "name": "config",
+                    "contents": [
+                      {
+                        "type": "file",
+                        "name": "RR_widget_config.js",
+                        "size": null
+                      },
+                      {
+                        "type": "file",
+                        "name": "adchoices.js",
+                        "size": null
+                      },
+                      {
+                        "type": "file",
+                        "name": "analytics.js",
+                        "size": null
+                      },
+                      {
+                        "type": "file",
+                        "name": "breakpoints.js",
+                        "size": null
+                      },
+                      {
+                        "type": "file",
+                        "name": "i18ConfigKeys.js",
+                        "size": null
+                      },
+                      {
+                        "type": "file",
+                        "name": "postmessage.js",
+                        "size": null
+                      },
+                      {
+                        "type": "file",
+                        "name": "settings.js",
+                        "size": null
+                      },
+                      {
+                        "type": "file",
+                        "name": "shoppable.js",
+                        "size": null
+                      }
+                    ]
+                  },
+                  {
+                    "type": "directory",
+                    "name": "css",
+                    "contents": [
+                      {
+                        "type": "directory",
+                        "name": "fonts",
+                        "contents": [
+                          {
+                            "type": "directory",
+                            "name": "icons",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "icomoon.eot",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "icomoon.svg",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "icomoon.ttf",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "icomoon.woff",
+                                "size": null
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "directory",
+                    "name": "data",
+                    "contents": [
+                      {
+                        "type": "file",
+                        "name": "buy-it-now-click2buy.json",
+                        "size": null
+                      },
+                      {
+                        "type": "file",
+                        "name": "config.json",
+                        "size": null
+                      },
+                      {
+                        "type": "file",
+                        "name": "global-footer-v2.json",
+                        "size": null
+                      },
+                      {
+                        "type": "file",
+                        "name": "global-navigation.json",
+                        "size": null
+                      },
+                      {
+                        "type": "file",
+                        "name": "login-register.json",
+                        "size": null
+                      },
+                      {
+                        "type": "file",
+                        "name": "ordered-list.json",
+                        "size": null
+                      },
+                      {
+                        "type": "file",
+                        "name": "page-listing.json",
+                        "size": null
+                      },
+                      {
+                        "type": "file",
+                        "name": "product-images.json",
+                        "size": null
+                      },
+                      {
+                        "type": "file",
+                        "name": "product-listing-v2.json",
+                        "size": null
+                      },
+                      {
+                        "type": "file",
+                        "name": "related-articles.json",
+                        "size": null
+                      },
+                      {
+                        "type": "file",
+                        "name": "related-products.json",
+                        "size": null
+                      },
+                      {
+                        "type": "file",
+                        "name": "rich-text-v2.json",
+                        "size": null
+                      },
+                      {
+                        "type": "file",
+                        "name": "search-listing-v2-results.json",
+                        "size": null
+                      },
+                      {
+                        "type": "file",
+                        "name": "search-listing.json",
+                        "size": null
+                      }
+                    ]
+                  },
+                  {
+                    "type": "directory",
+                    "name": "images-cms",
+                    "contents": [
+                      {
+                        "type": "directory",
+                        "name": "logo",
+                        "contents": [
+                          {
+                            "type": "file",
+                            "name": "brand-logo.png.ulenscale.100x70.png",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "brand-logo.png.ulenscale.200x140.png",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "brand-logo.ulenscale.68x32.png",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "unilever.png",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "unilever.png.ulenscale.66x73.png",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "unilever.ulenscale.68x32.png",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "whitelabel-icon.png",
+                            "size": null
+                          }
+                        ]
+                      },
+                      {
+                        "type": "directory",
+                        "name": "socials",
+                        "contents": [
+                          {
+                            "type": "file",
+                            "name": "facebook.png.ulenscale.32x32.png",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "instagram.png.ulenscale.32x32.png",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "pininterest.png.ulenscale.32x32.png",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "twitter.png.ulenscale.32x32.png",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "youtube.png.ulenscale.32x32.png",
+                            "size": null
+                          }
+                        ]
+                      },
+                      {
+                        "type": "file",
+                        "name": "default-image.png",
+                        "size": null
+                      }
+                    ]
+                  },
+                  {
+                    "type": "directory",
+                    "name": "images",
+                    "contents": [
+                      {
+                        "type": "directory",
+                        "name": "rating",
+                        "contents": [
+                          {
+                            "type": "file",
+                            "name": "rating-highlight.png",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "rating-highlight.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "rating.png",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "rating.svg",
+                            "size": null
+                          }
+                        ]
+                      },
+                      {
+                        "type": "file",
+                        "name": "crossicon.cur",
+                        "size": null
+                      },
+                      {
+                        "type": "file",
+                        "name": "crossicon.ico",
+                        "size": null
+                      },
+                      {
+                        "type": "file",
+                        "name": "crossicon.png",
+                        "size": null
+                      },
+                      {
+                        "type": "file",
+                        "name": "default-image.png",
+                        "size": null
+                      }
+                    ]
+                  },
+                  {
+                    "type": "directory",
+                    "name": "js",
+                    "contents": [
+                      {
+                        "type": "directory",
+                        "name": "templates",
+                        "contents": [
+                          {
+                            "type": "directory",
+                            "name": "featured-content",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "clickable-view.hbss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "defaultView.hbss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "featuredContentHalfbleed.hbss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "landingView.hbss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "noView.hbss",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "hero-v2",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "image.hbss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "imageAndText.hbss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "landingView.hbss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "noView.hbss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "textonly.hbss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "video.hbss",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "notfound",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "defaultView.hbss",
+                                "size": null
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "directory",
+                        "name": "views",
+                        "contents": [
+                          {
+                            "type": "directory",
+                            "name": "accordion-v2",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "accordion-v2.js",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "carousel-v2",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "carousel-v2.js",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "global-navigation",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "global-navigation.js",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "notFound",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "notFound.js",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "product-images",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "product-images.js",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "related-articles",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "related-articles.js",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "related-products",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "related-products.js",
+                                "size": null
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "file",
+                        "name": "app.js",
+                        "size": null
+                      },
+                      {
+                        "type": "file",
+                        "name": "main.js",
+                        "size": null
+                      }
+                    ]
+                  },
+                  {
+                    "type": "directory",
+                    "name": "sass",
+                    "contents": [
+                      {
+                        "type": "directory",
+                        "name": "global",
+                        "contents": [
+                          {
+                            "type": "directory",
+                            "name": "fonts",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "_font-guide.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_fonts.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_fonts_variables.scss",
+                                "size": null
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "directory",
+                        "name": "mixins",
+                        "contents": [
+                          {
+                            "type": "file",
+                            "name": "_animations.scss",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "_em.scss",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "_font-face.scss",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "_font-setup.scss",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "_loader.scss",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "_map-deep-get.scss",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "_opacity.scss",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "_rem.scss",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "_rounded.scss",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "_search.scss",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "_theme.scss",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "_transition.scss",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "_typography.scss",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "_utils.scss",
+                            "size": null
+                          }
+                        ]
+                      },
+                      {
+                        "type": "directory",
+                        "name": "themes",
+                        "contents": [
+                          {
+                            "type": "directory",
+                            "name": "timotei",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "_breakpoint-variables.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_buttons.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_colors.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_fonts-variables.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_layout.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_print.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_slick-carousel.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_utils.scss",
+                                "size": null
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "directory",
+                        "name": "views",
+                        "contents": [
+                          {
+                            "type": "directory",
+                            "name": "accordion-v2",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "_accordion-v2-variables.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_accordion-v2.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_accordion-v2__desktop.scss",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "back-to-top-cta",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "_back-to-top-cta.scss",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "breadcrumb",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "_breadcrumb-variables.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_breadcrumb.scss",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "buy-it-now",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "_buy-it-now.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_buy-it-now__tablet.scss",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "call-to-action",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "_call-to-action.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_call-to-action__desktop.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_call-to-action__tablet.scss",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "carousel-v2",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "_carousel-v2.scss",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "country-selector",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "_country-selector-variables.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_country-selector.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_country-selector__desktop.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_country-selector__tablet.scss",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "expand-collapse",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "_expand-collapse-variables.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_expand-collapse.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_expand-collapse__desktop.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_expand-collapse__tablet.scss",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "featured-content",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "_featured-content-desktop.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_featured-content-tablet.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_featured-content-variables.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_featured-content.scss",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "form-v2",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "_form-v2-desktop.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_form-v2-tablet.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_form-v2-variables.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_form-v2.scss",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "global-footer-v2",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "_global-footer-v2-desktop.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_global-footer-v2-tablet.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_global-footer-v2-variables.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_global-footer-v2.scss",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "global-navigation",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "_global-navigation-desktop.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_global-navigation-tablet.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_global-navigation-variables.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_global-navigation.scss",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "hero-v2",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "_hero-v2-desktop.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_hero-v2-tablet.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_hero-v2-variables.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_hero-v2.scss",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "ordered-list",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "_ordered-list-desktop.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_ordered-list-tablet.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_ordered-list.scss",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "page-listing-v2",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "_page-listing-v2-desktop.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_page-listing-v2-tablet.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_page-listing-v2-varaibles.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_page-listing-v2.scss",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "product-copy-v2",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "_product-copy-v2-variables.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_product-copy-v2.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_product-copy-v2__desktop.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_product-copy-v2__tablet.scss",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "product-images",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "_product-images-desktop.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_product-images-tablet.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_product-images-variable.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_product-images.scss",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "product-listing-v2",
+                            "contents": [
+                              {
+                                "type": "directory",
+                                "name": "quickview",
+                                "contents": [
+                                  {
+                                    "type": "file",
+                                    "name": "_quick-panel-desktop.scss",
+                                    "size": null
+                                  },
+                                  {
+                                    "type": "file",
+                                    "name": "_quick-panel-tablet.scss",
+                                    "size": null
+                                  },
+                                  {
+                                    "type": "file",
+                                    "name": "_quick-panel-variable.scss",
+                                    "size": null
+                                  },
+                                  {
+                                    "type": "file",
+                                    "name": "_quick-panel.scss",
+                                    "size": null
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "file",
+                                "name": "_product-listing-v2-desktop.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_product-listing-v2-tablet.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_product-listing-v2-variables.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_product-listing-v2.scss",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "product-rating-overview",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "_product-rating-overview-variables.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_product-rating-overview.scss",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "product-variants-and-price",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "_product-variants-and-price-variables.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_product-variants-and-price.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_product-variants-and-price__tablet.scss",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "related-articles",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "_related-articles-desktop.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_related-articles-tablet.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_related-articles-variables.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_related-articles.scss",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "related-products",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "_related-products-desktop.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_related-products-variables.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_related-products.scss",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "reviews",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "_reviews-desktop.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_reviews-tablet.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_reviews-variables.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_reviews.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_write-review-overlay-variables.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_write-review-overlay.scss",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "rich-text-v2",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "_rich-text-v2-desktop.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_rich-text-v2-tablet.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_rich-text-v2-variables.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_rich-text-v2.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_rich-text-v3-tablet.scss",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "search-input-v2",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "_search-input-v2-desktop.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_search-input-v2-variables.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_search-input-v2.scss",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "search-listing-v2",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "_search-listing-v2-desktop.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_search-listing-v2-tablet.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_search-listing-v2-variables.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_search-listing-v2.scss",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "sitemap",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "_sitemap-variables.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_sitemap.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_sitemap__desktop.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_sitemap__tablet.scss",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "social-sharing",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "_social-sharing.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_social-sharing__desktop.scss",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "tabbed-content",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "_tabbed-content-variables.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_tabbed-content.scss",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "tags",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "_tags-variables.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_tags.scss",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "_tags__desktop.scss",
+                                "size": null
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "file",
+                        "name": "_base.scss",
+                        "size": null
+                      },
+                      {
+                        "type": "file",
+                        "name": "_main.scss",
+                        "size": null
+                      }
+                    ]
+                  },
+                  {
+                    "type": "directory",
+                    "name": "svgs",
+                    "contents": [
+                      {
+                        "type": "directory",
+                        "name": "sprites",
+                        "contents": [
+                          {
+                            "type": "directory",
+                            "name": "css",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "svg-sprite.css",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "directory",
+                            "name": "img",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "symbol-sprite.png",
+                                "size": null
+                              },
+                              {
+                                "type": "file",
+                                "name": "symbol-sprite.svg",
+                                "size": null
+                              }
+                            ]
+                          },
+                          {
+                            "type": "file",
+                            "name": "arrow-left-slider.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "arrow-left.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "arrow-right-medium.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "arrow-right-slider.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "arrow-up.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "award.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "backward.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "card-number.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "carousel-left.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "carousel-right.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "check-green-large.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "check-green.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "check.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "close-green.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "close-white.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "cross-search-overlay.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "cross.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "down.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "email.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "error-green-large.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "error-green.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "error.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "facebook-green.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "facebook.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "forward.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "global-nav-marker.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "group-33.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "inputClose.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "inputError.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "instagram.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "left-copy.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "left.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "less-info.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "location-map-activ.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "location-map-nonactiv.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "location-small.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "mail.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "menu-mobile.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "more-info.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "navigation-dropdown.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "navigation-mobile-open.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "page-top.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "play-video.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "plus.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "prev-ico.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "review-fill.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "review.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "right-copy.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "right.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "search.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "shopping-basket-white.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "shopping-basket.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "success.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "to-top-hover.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "to-top.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "tooltip.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "twitter-green.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "twitter.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "unilever-logo.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "up.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "whatsapp.svg",
+                            "size": null
+                          },
+                          {
+                            "type": "file",
+                            "name": "youtube.svg",
+                            "size": null
+                          }
+                        ]
+                      },
+                      {
+                        "type": "directory",
+                        "name": "symbol",
+                        "contents": [
+                          {
+                            "type": "directory",
+                            "name": "svg",
+                            "contents": [
+                              {
+                                "type": "file",
+                                "name": "sprite.symbol.svg",
+                                "size": null
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "file",
+                        "name": "arrow-down.svg",
+                        "size": null
+                      },
+                      {
+                        "type": "file",
+                        "name": "arrow-drop.svg",
+                        "size": null
+                      },
+                      {
+                        "type": "file",
+                        "name": "arrow-left.svg",
+                        "size": null
+                      },
+                      {
+                        "type": "file",
+                        "name": "cross.svg",
+                        "size": null
+                      },
+                      {
+                        "type": "file",
+                        "name": "search.svg",
+                        "size": null
+                      },
+                      {
+                        "type": "file",
+                        "name": "symbol - Shortcut.lnk",
+                        "size": null
+                      }
+                    ]
+                  },
+                  {
+                    "type": "file",
+                    "name": ".bowerrc",
+                    "size": null
+                  },
+                  {
+                    "type": "file",
+                    "name": ".htaccess",
+                    "size": null
+                  },
+                  {
+                    "type": "file",
+                    "name": "404.html",
+                    "size": null
+                  },
+                  {
+                    "type": "file",
+                    "name": "bower.json",
+                    "size": null
+                  },
+                  {
+                    "type": "file",
+                    "name": "country-selector.html",
+                    "size": null
+                  },
+                  {
+                    "type": "file",
+                    "name": "cp-global-footer-v2.html",
+                    "size": null
+                  },
+                  {
+                    "type": "file",
+                    "name": "favicon.ico",
+                    "size": null
+                  },
+                  {
+                    "type": "file",
+                    "name": "index.html",
+                    "size": null
+                  },
+                  {
+                    "type": "file",
+                    "name": "page-listing.html",
+                    "size": null
+                  },
+                  {
+                    "type": "file",
+                    "name": "product-images.html",
+                    "size": null
+                  },
+                  {
+                    "type": "file",
+                    "name": "product-listing.html",
+                    "size": null
+                  },
+                  {
+                    "type": "file",
+                    "name": "robots.txt",
+                    "size": null
+                  },
+                  {
+                    "type": "file",
+                    "name": "search-listing.html",
+                    "size": null
+                  },
+                  {
+                    "type": "file",
+                    "name": "template-home.html",
+                    "size": null
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "config",
+            "contents": [
+              {
+                "type": "file",
+                "name": "timotei-config.js",
+                "size": null
+              }
+            ]
+          },
+          {
+            "type": "file",
+            "name": ".bowerrc",
+            "size": null
+          },
+          {
+            "type": "file",
+            "name": ".eslintrc",
+            "size": null
+          },
+          {
+            "type": "file",
+            "name": ".jshintrc",
+            "size": null
+          },
+          {
+            "type": "file",
+            "name": ".npmrc",
+            "size": null
+          },
+          {
+            "type": "file",
+            "name": ".ruby-version",
+            "size": null
+          },
+          {
+            "type": "file",
+            "name": ".sass-lint.yml",
+            "size": null
+          },
+          {
+            "type": "file",
+            "name": ".stylelintrc",
+            "size": null
+          },
+          {
+            "type": "file",
+            "name": ".yo-rc.json",
+            "size": null
+          },
+          {
+            "type": "file",
+            "name": "gulpfile.js",
+            "size": null
+          },
+          {
+            "type": "file",
+            "name": "package.json",
+            "size": null
+          },
+          {
+            "type": "file",
+            "name": "quickstart.md",
+            "size": null
+          },
+          {
+            "type": "file",
+            "name": "readme.md",
+            "size": null
+          }
+        ]
+      },
+      {
+        "type": "file",
+        "name": ".editorconfig",
+        "size": null
+      },
+      {
+        "type": "file",
+        "name": ".gitattributes",
+        "size": null
+      },
+      {
+        "type": "file",
+        "name": ".gitignore",
+        "size": null
+      },
+      {
+        "type": "file",
+        "name": "bitbucket-pipelines.yml",
+        "size": null
+      }
+    ]
+  },
+  {
+    "files": 302,
+    "symlinks": 0,
+    "submodules": 0,
+    "directories": 71,
+    "depth": 7,
+    "type": "report"
+  }
+]
