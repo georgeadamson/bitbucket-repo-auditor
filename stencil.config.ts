@@ -7,7 +7,8 @@ export const config: Config = {
   outputTargets: [
     {
       type: 'dist',
-      esmLoaderPath: '../loader'
+      esmLoaderPath: '../loader',
+      copy: [{ src: 'bookmarklet.js' }]
     },
     {
       type: 'docs-readme'
