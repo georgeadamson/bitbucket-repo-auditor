@@ -47,7 +47,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 var _this = this;
-var NAMESPACE = 'bookmarklet';
+var NAMESPACE = 'd2-repo-tools';
 var win = window;
 var doc = document;
 var plt = {

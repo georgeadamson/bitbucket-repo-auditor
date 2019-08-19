@@ -1,6 +1,4 @@
-'use strict';
-
-const NAMESPACE = 'bookmarklet';
+const NAMESPACE = 'd2-repo-tools';
 
 const win = window;
 const doc = document;
@@ -42,11 +40,11 @@ const consoleError = (e) => console.error(e);
 const loadModule = (cmpMeta, hostRef, hmrVersionId) => {
     // loadModuleImport
     const bundleId = cmpMeta.$lazyBundleIds$;
-    return Promise.resolve(require(
+    return import(
     /* webpackInclude: /\.entry\.js$/ */
     /* webpackExclude: /\.system\.entry\.js$/ */
     /* webpackMode: "lazy" */
-    `./${bundleId}.entry.js${''}`)).then(importedModule => importedModule[cmpMeta.$tagName$.replace(/-/g, '_')], consoleError);
+    `./${bundleId}.entry.js${''}`).then(importedModule => importedModule[cmpMeta.$tagName$.replace(/-/g, '_')], consoleError);
 };
 
 const styles = new Map();
@@ -142,13 +140,13 @@ const patchEsm = () => {
     // @ts-ignore
     if (!(win.CSS && win.CSS.supports && win.CSS.supports('color', 'var(--c)'))) {
         // @ts-ignore
-        return Promise.resolve(require('./css-shim-f7ddb189-673dd43d.js'));
+        return import('./css-shim-f7ddb189-f7ddb189.js');
     }
     return Promise.resolve();
 };
 const patchBrowser = async () => {
     // @ts-ignore
-    const importMeta = (typeof document === 'undefined' ? new (require('u' + 'rl').URL)('file:' + __filename).href : (document.currentScript && document.currentScript.src || new URL('chunk-dc303ab5.js', document.baseURI).href));
+    const importMeta = "";
     if (importMeta !== '') {
         return Promise.resolve(new URL('.', importMeta).href);
     }
@@ -159,7 +157,7 @@ const patchBrowser = async () => {
         patchDynamicImport(resourcesUrl.href);
         if (!window.customElements) {
             // @ts-ignore
-            await Promise.resolve(require('./dom-a0c82e31-d4621515.js'));
+            await import('./dom-a0c82e31-a0c82e31.js');
         }
         return resourcesUrl.href;
     }
@@ -1017,7 +1015,7 @@ const initializeComponent = async (elm, hostRef, cmpMeta, hmrVersionId, Cstr) =>
             let style = Cstr.style;
             let scopeId = getScopeId(cmpMeta.$tagName$, hostRef.$modeName$);
             if (cmpMeta.$flags$ & 8 /* needsShadowDomShim */) {
-                style = await Promise.resolve(require('./shadow-css-984bac74-b2177096.js')).then(m => m.scopeCss(style, scopeId, false));
+                style = await import('./shadow-css-984bac74-549b16dd.js').then(m => m.scopeCss(style, scopeId, false));
             }
             registerStyle(scopeId, style, !!(cmpMeta.$flags$ & 1 /* shadowDomEncapsulation */));
             Cstr.isStyleRegistered = true;
@@ -1171,8 +1169,4 @@ const bootstrapLazy = (lazyBundles, options = {}) => {
     head.insertBefore(visibilityStyle, y ? y.nextSibling : head.firstChild);
 };
 
-exports.bootstrapLazy = bootstrapLazy;
-exports.h = h;
-exports.patchBrowser = patchBrowser;
-exports.patchEsm = patchEsm;
-exports.registerInstance = registerInstance;
+export { patchEsm as a, bootstrapLazy as b, h, patchBrowser as p, registerInstance as r };
