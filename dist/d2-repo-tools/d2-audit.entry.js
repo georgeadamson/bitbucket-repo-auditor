@@ -1,7 +1,8 @@
-import { r as registerInstance, h } from './chunk-6437faea.js';
+import { r as registerInstance, h } from './chunk-c1759aa1.js';
 import { b as by } from './chunk-8ef7617a.js';
+import { g as getRepoName } from './chunk-d50f8dc8.js';
 
-const DEMO_TREE_JSON_FROM_FILE = [
+const DEMO_REPO_TREE_JSON_FROM_FILE = [
 	{
 		type: "directory",
 		name: ".",
@@ -30231,16 +30232,15 @@ class D2Audit {
         this.getProjectNode = () => this.getAppFolder().contents.find(by({ name: this.brand, type: 'directory' }));
     }
     componentWillLoad() {
-        const urlMatches = location.href.match(/d2_website_repositories\/([^\/]+)\/src\/([^\/]+)/) ||
-            [];
-        this.repo = urlMatches[1];
-        this.branch = urlMatches[1];
+        // Extract repo name and branch from bitbucket url:
+        const { repo, branch, isValidRepo, isBitbucket } = getRepoName();
+        Object.assign(this, { repo, branch, isValidRepo, isBitbucket });
         return (
         // fetch(this.treeUrl)
         // .then(response => response.text())
         // .then(json => (this.treeJson = JSON.parse(json)));
         new Promise(resolve => {
-            resolve((this.tree = DEMO_TREE_JSON_FROM_FILE));
+            resolve((this.tree = DEMO_REPO_TREE_JSON_FROM_FILE));
         }));
     }
     render() {

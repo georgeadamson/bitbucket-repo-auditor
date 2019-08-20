@@ -1,4 +1,4 @@
-import { r as registerInstance, h } from './chunk-6437faea.js';
+import { r as registerInstance, h } from './chunk-c1759aa1.js';
 import { b as by } from './chunk-8ef7617a.js';
 
 const byAppFolder = by({ name: 'app', type: 'directory' });

@@ -9,13 +9,13 @@ declare global {
 }
 
 describe('getRepoName', () => {
-  it('should detect when url is not https://bitbucket.org', () => {
+  it('should detect when url is not bitbucket.org', () => {
     global.location = { href: 'https://www.bbc.co.uk' };
 
     expect(getRepoName()).toMatchObject({
       isBitbucket: false,
-      isRepo: false,
-      name: undefined,
+      isValidRepo: false,
+      repo: undefined,
       branch: undefined
     });
   });
@@ -26,8 +26,8 @@ describe('getRepoName', () => {
     };
     expect(getRepoName()).toMatchObject({
       isBitbucket: true,
-      isRepo: false,
-      name: undefined,
+      isValidRepo: false,
+      repo: undefined,
       branch: undefined
     });
   });
@@ -40,8 +40,8 @@ describe('getRepoName', () => {
 
     expect(getRepoName()).toMatchObject({
       isBitbucket: true,
-      isRepo: true,
-      name: 'demoRepo',
+      isValidRepo: true,
+      repo: 'demoRepo',
       branch: 'demoBranch'
     });
   });

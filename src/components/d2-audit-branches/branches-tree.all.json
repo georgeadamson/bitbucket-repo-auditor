@@ -1,0 +1,1056 @@
+{
+    "pagelen": 10,
+    "next": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/refs\/branches?page=2",
+    "values": [
+        {
+            "target": {
+                "hash": "e701794d9926b8a577f114f9a4b7d46ed65f9863",
+                "repository": {
+                    "name": "timotei",
+                    "type": "repository",
+                    "full_name": "d2_website_repositories\/timotei",
+                    "links": {
+                        "self": {
+                            "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei"
+                        },
+                        "html": {
+                            "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei"
+                        },
+                        "avatar": {
+                            "href": "https:\/\/bytebucket.org\/ravatar\/%7B7249fcff-b903-4bf3-ae04-78d086533ea8%7D?ts=default"
+                        }
+                    },
+                    "uuid": "{7249fcff-b903-4bf3-ae04-78d086533ea8}"
+                },
+                "links": {
+                    "self": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/e701794d9926b8a577f114f9a4b7d46ed65f9863"
+                    },
+                    "comments": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/e701794d9926b8a577f114f9a4b7d46ed65f9863\/comments"
+                    },
+                    "html": {
+                        "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/commits\/e701794d9926b8a577f114f9a4b7d46ed65f9863"
+                    },
+                    "diff": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/diff\/e701794d9926b8a577f114f9a4b7d46ed65f9863"
+                    },
+                    "approve": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/e701794d9926b8a577f114f9a4b7d46ed65f9863\/approve"
+                    },
+                    "statuses": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/e701794d9926b8a577f114f9a4b7d46ed65f9863\/statuses"
+                    }
+                },
+                "author": {
+                    "raw": "Jugal Joshi <jugal.joshi@publicissapient.com>",
+                    "type": "author",
+                    "user": {
+                        "display_name": "Jugal Joshi",
+                        "uuid": "{4e92d6c8-06f0-4e09-aa32-205533024c61}",
+                        "links": {
+                            "self": {
+                                "href": "https:\/\/bitbucket.org\/!api\/2.0\/users\/%7B4e92d6c8-06f0-4e09-aa32-205533024c61%7D"
+                            },
+                            "html": {
+                                "href": "https:\/\/bitbucket.org\/%7B4e92d6c8-06f0-4e09-aa32-205533024c61%7D\/"
+                            },
+                            "avatar": {
+                                "href": "https:\/\/secure.gravatar.com\/avatar\/08d1c255f2454303b9034b415c4d6047?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJJ-4.png"
+                            }
+                        },
+                        "type": "user",
+                        "nickname": "JugalJoshi8",
+                        "account_id": "557058:4773377e-a37d-464d-9c49-e71eb58e3d9e"
+                    }
+                },
+                "parents": [
+                    {
+                        "type": "commit",
+                        "hash": "2446cb4c23915e54ad7083a09da0eec92163ae3d",
+                        "links": {
+                            "self": {
+                                "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/2446cb4c23915e54ad7083a09da0eec92163ae3d"
+                            },
+                            "html": {
+                                "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/commits\/2446cb4c23915e54ad7083a09da0eec92163ae3d"
+                            }
+                        }
+                    },
+                    {
+                        "type": "commit",
+                        "hash": "99b9899d3f0f0b411cac1c943a811ab252166d44",
+                        "links": {
+                            "self": {
+                                "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/99b9899d3f0f0b411cac1c943a811ab252166d44"
+                            },
+                            "html": {
+                                "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/commits\/99b9899d3f0f0b411cac1c943a811ab252166d44"
+                            }
+                        }
+                    }
+                ],
+                "date": "2019-08-20T09:45:12+00:00",
+                "message": "Merged in hotfix\/analytics-update (pull request #244)\n\nupdated analytics.js\n\nApproved-by: Deepak Bulani <dbulani@sapient.com>\n",
+                "type": "commit"
+            },
+            "links": {
+                "commits": {
+                    "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commits\/develop"
+                },
+                "self": {
+                    "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/refs\/branches\/develop"
+                },
+                "html": {
+                    "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/branch\/develop"
+                }
+            },
+            "default_merge_strategy": "merge_commit",
+            "merge_strategies": [
+                "merge_commit",
+                "squash",
+                "fast_forward"
+            ],
+            "type": "branch",
+            "name": "develop"
+        },
+        {
+            "target": {
+                "hash": "4ad4a7071bddb286962f286bff83b73eb87134a5",
+                "repository": {
+                    "name": "timotei",
+                    "type": "repository",
+                    "full_name": "d2_website_repositories\/timotei",
+                    "links": {
+                        "self": {
+                            "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei"
+                        },
+                        "html": {
+                            "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei"
+                        },
+                        "avatar": {
+                            "href": "https:\/\/bytebucket.org\/ravatar\/%7B7249fcff-b903-4bf3-ae04-78d086533ea8%7D?ts=default"
+                        }
+                    },
+                    "uuid": "{7249fcff-b903-4bf3-ae04-78d086533ea8}"
+                },
+                "links": {
+                    "self": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/4ad4a7071bddb286962f286bff83b73eb87134a5"
+                    },
+                    "comments": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/4ad4a7071bddb286962f286bff83b73eb87134a5\/comments"
+                    },
+                    "patch": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/patch\/4ad4a7071bddb286962f286bff83b73eb87134a5"
+                    },
+                    "html": {
+                        "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/commits\/4ad4a7071bddb286962f286bff83b73eb87134a5"
+                    },
+                    "diff": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/diff\/4ad4a7071bddb286962f286bff83b73eb87134a5"
+                    },
+                    "approve": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/4ad4a7071bddb286962f286bff83b73eb87134a5\/approve"
+                    },
+                    "statuses": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/4ad4a7071bddb286962f286bff83b73eb87134a5\/statuses"
+                    }
+                },
+                "author": {
+                    "raw": "Piyush Kumar <piyushkumar.verma@sapien.com>",
+                    "type": "author"
+                },
+                "parents": [
+                    {
+                        "type": "commit",
+                        "hash": "5af6ddeb49cd1c9127cd5ac8fbf9818bedb62784",
+                        "links": {
+                            "self": {
+                                "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/5af6ddeb49cd1c9127cd5ac8fbf9818bedb62784"
+                            },
+                            "html": {
+                                "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/commits\/5af6ddeb49cd1c9127cd5ac8fbf9818bedb62784"
+                            }
+                        }
+                    }
+                ],
+                "date": "2019-04-24T05:06:20+00:00",
+                "message": "datepicker fix\n",
+                "type": "commit"
+            },
+            "links": {
+                "commits": {
+                    "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commits\/feature\/FE-fixes"
+                },
+                "self": {
+                    "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/refs\/branches\/feature\/FE-fixes"
+                },
+                "html": {
+                    "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/branch\/feature\/FE-fixes"
+                }
+            },
+            "default_merge_strategy": "merge_commit",
+            "merge_strategies": [
+                "merge_commit",
+                "squash",
+                "fast_forward"
+            ],
+            "type": "branch",
+            "name": "feature\/FE-fixes"
+        },
+        {
+            "target": {
+                "hash": "580ed4146606b826ec1a6f6a1f19985e256d53ec",
+                "repository": {
+                    "name": "timotei",
+                    "type": "repository",
+                    "full_name": "d2_website_repositories\/timotei",
+                    "links": {
+                        "self": {
+                            "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei"
+                        },
+                        "html": {
+                            "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei"
+                        },
+                        "avatar": {
+                            "href": "https:\/\/bytebucket.org\/ravatar\/%7B7249fcff-b903-4bf3-ae04-78d086533ea8%7D?ts=default"
+                        }
+                    },
+                    "uuid": "{7249fcff-b903-4bf3-ae04-78d086533ea8}"
+                },
+                "links": {
+                    "self": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/580ed4146606b826ec1a6f6a1f19985e256d53ec"
+                    },
+                    "comments": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/580ed4146606b826ec1a6f6a1f19985e256d53ec\/comments"
+                    },
+                    "patch": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/patch\/580ed4146606b826ec1a6f6a1f19985e256d53ec"
+                    },
+                    "html": {
+                        "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/commits\/580ed4146606b826ec1a6f6a1f19985e256d53ec"
+                    },
+                    "diff": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/diff\/580ed4146606b826ec1a6f6a1f19985e256d53ec"
+                    },
+                    "approve": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/580ed4146606b826ec1a6f6a1f19985e256d53ec\/approve"
+                    },
+                    "statuses": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/580ed4146606b826ec1a6f6a1f19985e256d53ec\/statuses"
+                    }
+                },
+                "author": {
+                    "raw": "LL\\megsaini <mparihar@sapient.com>",
+                    "type": "author",
+                    "user": {
+                        "display_name": "Megha Parihar",
+                        "uuid": "{6efb434d-e74a-473f-9811-e05e40e62561}",
+                        "links": {
+                            "self": {
+                                "href": "https:\/\/bitbucket.org\/!api\/2.0\/users\/%7B6efb434d-e74a-473f-9811-e05e40e62561%7D"
+                            },
+                            "html": {
+                                "href": "https:\/\/bitbucket.org\/%7B6efb434d-e74a-473f-9811-e05e40e62561%7D\/"
+                            },
+                            "avatar": {
+                                "href": "https:\/\/secure.gravatar.com\/avatar\/11e984bc81656738955647c256284474?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FMP-0.png"
+                            }
+                        },
+                        "type": "user",
+                        "nickname": "MeghaParihar",
+                        "account_id": "557058:df4bd0c8-cb5e-4745-9058-645a91a37104"
+                    }
+                },
+                "parents": [
+                    {
+                        "type": "commit",
+                        "hash": "927e22309352c52537791975727363138c2c6368",
+                        "links": {
+                            "self": {
+                                "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/927e22309352c52537791975727363138c2c6368"
+                            },
+                            "html": {
+                                "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/commits\/927e22309352c52537791975727363138c2c6368"
+                            }
+                        }
+                    }
+                ],
+                "date": "2019-04-23T05:46:13+00:00",
+                "message": "KQ pipe | for mob landscape\n",
+                "type": "commit"
+            },
+            "links": {
+                "commits": {
+                    "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commits\/feature\/form"
+                },
+                "self": {
+                    "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/refs\/branches\/feature\/form"
+                },
+                "html": {
+                    "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/branch\/feature\/form"
+                }
+            },
+            "default_merge_strategy": "merge_commit",
+            "merge_strategies": [
+                "merge_commit",
+                "squash",
+                "fast_forward"
+            ],
+            "type": "branch",
+            "name": "feature\/form"
+        },
+        {
+            "target": {
+                "hash": "c15c06ac74ef7c29bfaaa9954f06d013826aaf53",
+                "repository": {
+                    "name": "timotei",
+                    "type": "repository",
+                    "full_name": "d2_website_repositories\/timotei",
+                    "links": {
+                        "self": {
+                            "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei"
+                        },
+                        "html": {
+                            "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei"
+                        },
+                        "avatar": {
+                            "href": "https:\/\/bytebucket.org\/ravatar\/%7B7249fcff-b903-4bf3-ae04-78d086533ea8%7D?ts=default"
+                        }
+                    },
+                    "uuid": "{7249fcff-b903-4bf3-ae04-78d086533ea8}"
+                },
+                "links": {
+                    "self": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/c15c06ac74ef7c29bfaaa9954f06d013826aaf53"
+                    },
+                    "comments": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/c15c06ac74ef7c29bfaaa9954f06d013826aaf53\/comments"
+                    },
+                    "patch": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/patch\/c15c06ac74ef7c29bfaaa9954f06d013826aaf53"
+                    },
+                    "html": {
+                        "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/commits\/c15c06ac74ef7c29bfaaa9954f06d013826aaf53"
+                    },
+                    "diff": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/diff\/c15c06ac74ef7c29bfaaa9954f06d013826aaf53"
+                    },
+                    "approve": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/c15c06ac74ef7c29bfaaa9954f06d013826aaf53\/approve"
+                    },
+                    "statuses": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/c15c06ac74ef7c29bfaaa9954f06d013826aaf53\/statuses"
+                    }
+                },
+                "author": {
+                    "raw": "LL\\megsaini <mparihar@sapient.com>",
+                    "type": "author",
+                    "user": {
+                        "display_name": "Megha Parihar",
+                        "uuid": "{6efb434d-e74a-473f-9811-e05e40e62561}",
+                        "links": {
+                            "self": {
+                                "href": "https:\/\/bitbucket.org\/!api\/2.0\/users\/%7B6efb434d-e74a-473f-9811-e05e40e62561%7D"
+                            },
+                            "html": {
+                                "href": "https:\/\/bitbucket.org\/%7B6efb434d-e74a-473f-9811-e05e40e62561%7D\/"
+                            },
+                            "avatar": {
+                                "href": "https:\/\/secure.gravatar.com\/avatar\/11e984bc81656738955647c256284474?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FMP-0.png"
+                            }
+                        },
+                        "type": "user",
+                        "nickname": "MeghaParihar",
+                        "account_id": "557058:df4bd0c8-cb5e-4745-9058-645a91a37104"
+                    }
+                },
+                "parents": [
+                    {
+                        "type": "commit",
+                        "hash": "2215f23a8d56bde404b4dab130589c8c8275d5ac",
+                        "links": {
+                            "self": {
+                                "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/2215f23a8d56bde404b4dab130589c8c8275d5ac"
+                            },
+                            "html": {
+                                "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/commits\/2215f23a8d56bde404b4dab130589c8c8275d5ac"
+                            }
+                        }
+                    }
+                ],
+                "date": "2019-04-25T04:04:08+00:00",
+                "message": "TIMM-98 | Product listing components\n",
+                "type": "commit"
+            },
+            "links": {
+                "commits": {
+                    "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commits\/feature\/global-footer"
+                },
+                "self": {
+                    "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/refs\/branches\/feature\/global-footer"
+                },
+                "html": {
+                    "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/branch\/feature\/global-footer"
+                }
+            },
+            "default_merge_strategy": "merge_commit",
+            "merge_strategies": [
+                "merge_commit",
+                "squash",
+                "fast_forward"
+            ],
+            "type": "branch",
+            "name": "feature\/global-footer"
+        },
+        {
+            "target": {
+                "hash": "6c288116db5e2719e6f390ac33b50b06528f8c81",
+                "repository": {
+                    "name": "timotei",
+                    "type": "repository",
+                    "full_name": "d2_website_repositories\/timotei",
+                    "links": {
+                        "self": {
+                            "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei"
+                        },
+                        "html": {
+                            "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei"
+                        },
+                        "avatar": {
+                            "href": "https:\/\/bytebucket.org\/ravatar\/%7B7249fcff-b903-4bf3-ae04-78d086533ea8%7D?ts=default"
+                        }
+                    },
+                    "uuid": "{7249fcff-b903-4bf3-ae04-78d086533ea8}"
+                },
+                "links": {
+                    "self": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/6c288116db5e2719e6f390ac33b50b06528f8c81"
+                    },
+                    "comments": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/6c288116db5e2719e6f390ac33b50b06528f8c81\/comments"
+                    },
+                    "html": {
+                        "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/commits\/6c288116db5e2719e6f390ac33b50b06528f8c81"
+                    },
+                    "diff": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/diff\/6c288116db5e2719e6f390ac33b50b06528f8c81"
+                    },
+                    "approve": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/6c288116db5e2719e6f390ac33b50b06528f8c81\/approve"
+                    },
+                    "statuses": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/6c288116db5e2719e6f390ac33b50b06528f8c81\/statuses"
+                    }
+                },
+                "author": {
+                    "raw": "LL\\megsaini <mparihar@sapient.com>",
+                    "type": "author",
+                    "user": {
+                        "display_name": "Megha Parihar",
+                        "uuid": "{6efb434d-e74a-473f-9811-e05e40e62561}",
+                        "links": {
+                            "self": {
+                                "href": "https:\/\/bitbucket.org\/!api\/2.0\/users\/%7B6efb434d-e74a-473f-9811-e05e40e62561%7D"
+                            },
+                            "html": {
+                                "href": "https:\/\/bitbucket.org\/%7B6efb434d-e74a-473f-9811-e05e40e62561%7D\/"
+                            },
+                            "avatar": {
+                                "href": "https:\/\/secure.gravatar.com\/avatar\/11e984bc81656738955647c256284474?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FMP-0.png"
+                            }
+                        },
+                        "type": "user",
+                        "nickname": "MeghaParihar",
+                        "account_id": "557058:df4bd0c8-cb5e-4745-9058-645a91a37104"
+                    }
+                },
+                "parents": [
+                    {
+                        "type": "commit",
+                        "hash": "6136111f93205ef4ead289eea99f6617ee28ac76",
+                        "links": {
+                            "self": {
+                                "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/6136111f93205ef4ead289eea99f6617ee28ac76"
+                            },
+                            "html": {
+                                "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/commits\/6136111f93205ef4ead289eea99f6617ee28ac76"
+                            }
+                        }
+                    },
+                    {
+                        "type": "commit",
+                        "hash": "2f38d982c4fc8cd9a41ca45544e5f8a659fd90a7",
+                        "links": {
+                            "self": {
+                                "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/2f38d982c4fc8cd9a41ca45544e5f8a659fd90a7"
+                            },
+                            "html": {
+                                "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/commits\/2f38d982c4fc8cd9a41ca45544e5f8a659fd90a7"
+                            }
+                        }
+                    }
+                ],
+                "date": "2019-05-21T11:46:08+00:00",
+                "message": "Merge branch 'develop' into feature\/kq\n",
+                "type": "commit"
+            },
+            "links": {
+                "commits": {
+                    "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commits\/feature\/kq"
+                },
+                "self": {
+                    "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/refs\/branches\/feature\/kq"
+                },
+                "html": {
+                    "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/branch\/feature\/kq"
+                }
+            },
+            "default_merge_strategy": "merge_commit",
+            "merge_strategies": [
+                "merge_commit",
+                "squash",
+                "fast_forward"
+            ],
+            "type": "branch",
+            "name": "feature\/kq"
+        },
+        {
+            "target": {
+                "hash": "99b9899d3f0f0b411cac1c943a811ab252166d44",
+                "repository": {
+                    "name": "timotei",
+                    "type": "repository",
+                    "full_name": "d2_website_repositories\/timotei",
+                    "links": {
+                        "self": {
+                            "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei"
+                        },
+                        "html": {
+                            "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei"
+                        },
+                        "avatar": {
+                            "href": "https:\/\/bytebucket.org\/ravatar\/%7B7249fcff-b903-4bf3-ae04-78d086533ea8%7D?ts=default"
+                        }
+                    },
+                    "uuid": "{7249fcff-b903-4bf3-ae04-78d086533ea8}"
+                },
+                "links": {
+                    "self": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/99b9899d3f0f0b411cac1c943a811ab252166d44"
+                    },
+                    "comments": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/99b9899d3f0f0b411cac1c943a811ab252166d44\/comments"
+                    },
+                    "patch": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/patch\/99b9899d3f0f0b411cac1c943a811ab252166d44"
+                    },
+                    "html": {
+                        "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/commits\/99b9899d3f0f0b411cac1c943a811ab252166d44"
+                    },
+                    "diff": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/diff\/99b9899d3f0f0b411cac1c943a811ab252166d44"
+                    },
+                    "approve": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/99b9899d3f0f0b411cac1c943a811ab252166d44\/approve"
+                    },
+                    "statuses": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/99b9899d3f0f0b411cac1c943a811ab252166d44\/statuses"
+                    }
+                },
+                "author": {
+                    "raw": "Jugal Joshi <jugjoshi@publicisgroupe.net>",
+                    "type": "author"
+                },
+                "parents": [
+                    {
+                        "type": "commit",
+                        "hash": "2446cb4c23915e54ad7083a09da0eec92163ae3d",
+                        "links": {
+                            "self": {
+                                "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/2446cb4c23915e54ad7083a09da0eec92163ae3d"
+                            },
+                            "html": {
+                                "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/commits\/2446cb4c23915e54ad7083a09da0eec92163ae3d"
+                            }
+                        }
+                    }
+                ],
+                "date": "2019-08-20T09:36:20+00:00",
+                "message": "updated analytics.js\n",
+                "type": "commit"
+            },
+            "links": {
+                "commits": {
+                    "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commits\/hotfix\/analytics-update"
+                },
+                "self": {
+                    "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/refs\/branches\/hotfix\/analytics-update"
+                },
+                "html": {
+                    "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/branch\/hotfix\/analytics-update"
+                }
+            },
+            "default_merge_strategy": "merge_commit",
+            "merge_strategies": [
+                "merge_commit",
+                "squash",
+                "fast_forward"
+            ],
+            "type": "branch",
+            "name": "hotfix\/analytics-update"
+        },
+        {
+            "target": {
+                "hash": "2264bb9cd446f9bbdf8db478511fb16c46199a4e",
+                "repository": {
+                    "name": "timotei",
+                    "type": "repository",
+                    "full_name": "d2_website_repositories\/timotei",
+                    "links": {
+                        "self": {
+                            "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei"
+                        },
+                        "html": {
+                            "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei"
+                        },
+                        "avatar": {
+                            "href": "https:\/\/bytebucket.org\/ravatar\/%7B7249fcff-b903-4bf3-ae04-78d086533ea8%7D?ts=default"
+                        }
+                    },
+                    "uuid": "{7249fcff-b903-4bf3-ae04-78d086533ea8}"
+                },
+                "links": {
+                    "self": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/2264bb9cd446f9bbdf8db478511fb16c46199a4e"
+                    },
+                    "comments": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/2264bb9cd446f9bbdf8db478511fb16c46199a4e\/comments"
+                    },
+                    "html": {
+                        "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/commits\/2264bb9cd446f9bbdf8db478511fb16c46199a4e"
+                    },
+                    "diff": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/diff\/2264bb9cd446f9bbdf8db478511fb16c46199a4e"
+                    },
+                    "approve": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/2264bb9cd446f9bbdf8db478511fb16c46199a4e\/approve"
+                    },
+                    "statuses": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/2264bb9cd446f9bbdf8db478511fb16c46199a4e\/statuses"
+                    }
+                },
+                "author": {
+                    "raw": "Rosi Reddy <rosi.singareddy@publicissapient.com>",
+                    "type": "author",
+                    "user": {
+                        "display_name": "Rosi Reddy",
+                        "uuid": "{db549a9b-e921-4844-9d2d-03357e8933b0}",
+                        "links": {
+                            "self": {
+                                "href": "https:\/\/bitbucket.org\/!api\/2.0\/users\/%7Bdb549a9b-e921-4844-9d2d-03357e8933b0%7D"
+                            },
+                            "html": {
+                                "href": "https:\/\/bitbucket.org\/%7Bdb549a9b-e921-4844-9d2d-03357e8933b0%7D\/"
+                            },
+                            "avatar": {
+                                "href": "https:\/\/secure.gravatar.com\/avatar\/fb3a0d940f3d17d7f6ba654469021e51?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FRR-6.png"
+                            }
+                        },
+                        "type": "user",
+                        "nickname": "rosireddy",
+                        "account_id": "5cc04ab02f51be0e56a1b1b5"
+                    }
+                },
+                "parents": [
+                    {
+                        "type": "commit",
+                        "hash": "7481160d2af2d32e25a7930953703a971d810e88",
+                        "links": {
+                            "self": {
+                                "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/7481160d2af2d32e25a7930953703a971d810e88"
+                            },
+                            "html": {
+                                "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/commits\/7481160d2af2d32e25a7930953703a971d810e88"
+                            }
+                        }
+                    },
+                    {
+                        "type": "commit",
+                        "hash": "3f85ed059d7d57a784716bf972a439700982b617",
+                        "links": {
+                            "self": {
+                                "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/3f85ed059d7d57a784716bf972a439700982b617"
+                            },
+                            "html": {
+                                "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/commits\/3f85ed059d7d57a784716bf972a439700982b617"
+                            }
+                        }
+                    }
+                ],
+                "date": "2019-05-27T06:08:12+00:00",
+                "message": "Merged in releases\/1.1 (pull request #243)\n\nReleases\/1.1\n",
+                "type": "commit"
+            },
+            "links": {
+                "commits": {
+                    "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commits\/master"
+                },
+                "self": {
+                    "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/refs\/branches\/master"
+                },
+                "html": {
+                    "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/branch\/master"
+                }
+            },
+            "default_merge_strategy": "merge_commit",
+            "merge_strategies": [
+                "merge_commit",
+                "squash",
+                "fast_forward"
+            ],
+            "type": "branch",
+            "name": "master"
+        },
+        {
+            "target": {
+                "hash": "7481160d2af2d32e25a7930953703a971d810e88",
+                "repository": {
+                    "name": "timotei",
+                    "type": "repository",
+                    "full_name": "d2_website_repositories\/timotei",
+                    "links": {
+                        "self": {
+                            "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei"
+                        },
+                        "html": {
+                            "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei"
+                        },
+                        "avatar": {
+                            "href": "https:\/\/bytebucket.org\/ravatar\/%7B7249fcff-b903-4bf3-ae04-78d086533ea8%7D?ts=default"
+                        }
+                    },
+                    "uuid": "{7249fcff-b903-4bf3-ae04-78d086533ea8}"
+                },
+                "links": {
+                    "self": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/7481160d2af2d32e25a7930953703a971d810e88"
+                    },
+                    "comments": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/7481160d2af2d32e25a7930953703a971d810e88\/comments"
+                    },
+                    "html": {
+                        "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/commits\/7481160d2af2d32e25a7930953703a971d810e88"
+                    },
+                    "diff": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/diff\/7481160d2af2d32e25a7930953703a971d810e88"
+                    },
+                    "approve": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/7481160d2af2d32e25a7930953703a971d810e88\/approve"
+                    },
+                    "statuses": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/7481160d2af2d32e25a7930953703a971d810e88\/statuses"
+                    }
+                },
+                "author": {
+                    "raw": "Megha Parihar <mparihar@sapient.com>",
+                    "type": "author",
+                    "user": {
+                        "display_name": "Megha Parihar",
+                        "uuid": "{6efb434d-e74a-473f-9811-e05e40e62561}",
+                        "links": {
+                            "self": {
+                                "href": "https:\/\/bitbucket.org\/!api\/2.0\/users\/%7B6efb434d-e74a-473f-9811-e05e40e62561%7D"
+                            },
+                            "html": {
+                                "href": "https:\/\/bitbucket.org\/%7B6efb434d-e74a-473f-9811-e05e40e62561%7D\/"
+                            },
+                            "avatar": {
+                                "href": "https:\/\/secure.gravatar.com\/avatar\/11e984bc81656738955647c256284474?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FMP-0.png"
+                            }
+                        },
+                        "type": "user",
+                        "nickname": "MeghaParihar",
+                        "account_id": "557058:df4bd0c8-cb5e-4745-9058-645a91a37104"
+                    }
+                },
+                "parents": [
+                    {
+                        "type": "commit",
+                        "hash": "358c96e3a8283a22ce6e3b259f38fa0b8fd5579e",
+                        "links": {
+                            "self": {
+                                "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/358c96e3a8283a22ce6e3b259f38fa0b8fd5579e"
+                            },
+                            "html": {
+                                "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/commits\/358c96e3a8283a22ce6e3b259f38fa0b8fd5579e"
+                            }
+                        }
+                    },
+                    {
+                        "type": "commit",
+                        "hash": "58513674884bbe91954653089d5251fb2871a0af",
+                        "links": {
+                            "self": {
+                                "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/58513674884bbe91954653089d5251fb2871a0af"
+                            },
+                            "html": {
+                                "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/commits\/58513674884bbe91954653089d5251fb2871a0af"
+                            }
+                        }
+                    }
+                ],
+                "date": "2019-05-07T10:18:33+00:00",
+                "message": "Merged in develop (pull request #238)\n\nPage Listing CLP fix and star position UI fix\n",
+                "type": "commit"
+            },
+            "links": {
+                "commits": {
+                    "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commits\/master_bkp"
+                },
+                "self": {
+                    "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/refs\/branches\/master_bkp"
+                },
+                "html": {
+                    "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/branch\/master_bkp"
+                }
+            },
+            "default_merge_strategy": "merge_commit",
+            "merge_strategies": [
+                "merge_commit",
+                "squash",
+                "fast_forward"
+            ],
+            "type": "branch",
+            "name": "master_bkp"
+        },
+        {
+            "target": {
+                "hash": "3f85ed059d7d57a784716bf972a439700982b617",
+                "repository": {
+                    "name": "timotei",
+                    "type": "repository",
+                    "full_name": "d2_website_repositories\/timotei",
+                    "links": {
+                        "self": {
+                            "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei"
+                        },
+                        "html": {
+                            "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei"
+                        },
+                        "avatar": {
+                            "href": "https:\/\/bytebucket.org\/ravatar\/%7B7249fcff-b903-4bf3-ae04-78d086533ea8%7D?ts=default"
+                        }
+                    },
+                    "uuid": "{7249fcff-b903-4bf3-ae04-78d086533ea8}"
+                },
+                "links": {
+                    "self": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/3f85ed059d7d57a784716bf972a439700982b617"
+                    },
+                    "comments": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/3f85ed059d7d57a784716bf972a439700982b617\/comments"
+                    },
+                    "html": {
+                        "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/commits\/3f85ed059d7d57a784716bf972a439700982b617"
+                    },
+                    "diff": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/diff\/3f85ed059d7d57a784716bf972a439700982b617"
+                    },
+                    "approve": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/3f85ed059d7d57a784716bf972a439700982b617\/approve"
+                    },
+                    "statuses": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/3f85ed059d7d57a784716bf972a439700982b617\/statuses"
+                    }
+                },
+                "author": {
+                    "raw": "Megha Parihar <mparihar@sapient.com>",
+                    "type": "author",
+                    "user": {
+                        "display_name": "Megha Parihar",
+                        "uuid": "{6efb434d-e74a-473f-9811-e05e40e62561}",
+                        "links": {
+                            "self": {
+                                "href": "https:\/\/bitbucket.org\/!api\/2.0\/users\/%7B6efb434d-e74a-473f-9811-e05e40e62561%7D"
+                            },
+                            "html": {
+                                "href": "https:\/\/bitbucket.org\/%7B6efb434d-e74a-473f-9811-e05e40e62561%7D\/"
+                            },
+                            "avatar": {
+                                "href": "https:\/\/secure.gravatar.com\/avatar\/11e984bc81656738955647c256284474?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FMP-0.png"
+                            }
+                        },
+                        "type": "user",
+                        "nickname": "MeghaParihar",
+                        "account_id": "557058:df4bd0c8-cb5e-4745-9058-645a91a37104"
+                    }
+                },
+                "parents": [
+                    {
+                        "type": "commit",
+                        "hash": "c45d4f0624afdf8a10b4d01b947c23cc1289f7ac",
+                        "links": {
+                            "self": {
+                                "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/c45d4f0624afdf8a10b4d01b947c23cc1289f7ac"
+                            },
+                            "html": {
+                                "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/commits\/c45d4f0624afdf8a10b4d01b947c23cc1289f7ac"
+                            }
+                        }
+                    },
+                    {
+                        "type": "commit",
+                        "hash": "2446cb4c23915e54ad7083a09da0eec92163ae3d",
+                        "links": {
+                            "self": {
+                                "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/2446cb4c23915e54ad7083a09da0eec92163ae3d"
+                            },
+                            "html": {
+                                "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/commits\/2446cb4c23915e54ad7083a09da0eec92163ae3d"
+                            }
+                        }
+                    }
+                ],
+                "date": "2019-05-21T11:50:17+00:00",
+                "message": "Merged in develop (pull request #242)\n\nHandover fixes\n",
+                "type": "commit"
+            },
+            "links": {
+                "commits": {
+                    "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commits\/release-uat"
+                },
+                "self": {
+                    "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/refs\/branches\/release-uat"
+                },
+                "html": {
+                    "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/branch\/release-uat"
+                }
+            },
+            "default_merge_strategy": "merge_commit",
+            "merge_strategies": [
+                "merge_commit",
+                "squash",
+                "fast_forward"
+            ],
+            "type": "branch",
+            "name": "release-uat"
+        },
+        {
+            "target": {
+                "hash": "3f85ed059d7d57a784716bf972a439700982b617",
+                "repository": {
+                    "name": "timotei",
+                    "type": "repository",
+                    "full_name": "d2_website_repositories\/timotei",
+                    "links": {
+                        "self": {
+                            "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei"
+                        },
+                        "html": {
+                            "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei"
+                        },
+                        "avatar": {
+                            "href": "https:\/\/bytebucket.org\/ravatar\/%7B7249fcff-b903-4bf3-ae04-78d086533ea8%7D?ts=default"
+                        }
+                    },
+                    "uuid": "{7249fcff-b903-4bf3-ae04-78d086533ea8}"
+                },
+                "links": {
+                    "self": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/3f85ed059d7d57a784716bf972a439700982b617"
+                    },
+                    "comments": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/3f85ed059d7d57a784716bf972a439700982b617\/comments"
+                    },
+                    "html": {
+                        "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/commits\/3f85ed059d7d57a784716bf972a439700982b617"
+                    },
+                    "diff": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/diff\/3f85ed059d7d57a784716bf972a439700982b617"
+                    },
+                    "approve": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/3f85ed059d7d57a784716bf972a439700982b617\/approve"
+                    },
+                    "statuses": {
+                        "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/3f85ed059d7d57a784716bf972a439700982b617\/statuses"
+                    }
+                },
+                "author": {
+                    "raw": "Megha Parihar <mparihar@sapient.com>",
+                    "type": "author",
+                    "user": {
+                        "display_name": "Megha Parihar",
+                        "uuid": "{6efb434d-e74a-473f-9811-e05e40e62561}",
+                        "links": {
+                            "self": {
+                                "href": "https:\/\/bitbucket.org\/!api\/2.0\/users\/%7B6efb434d-e74a-473f-9811-e05e40e62561%7D"
+                            },
+                            "html": {
+                                "href": "https:\/\/bitbucket.org\/%7B6efb434d-e74a-473f-9811-e05e40e62561%7D\/"
+                            },
+                            "avatar": {
+                                "href": "https:\/\/secure.gravatar.com\/avatar\/11e984bc81656738955647c256284474?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FMP-0.png"
+                            }
+                        },
+                        "type": "user",
+                        "nickname": "MeghaParihar",
+                        "account_id": "557058:df4bd0c8-cb5e-4745-9058-645a91a37104"
+                    }
+                },
+                "parents": [
+                    {
+                        "type": "commit",
+                        "hash": "c45d4f0624afdf8a10b4d01b947c23cc1289f7ac",
+                        "links": {
+                            "self": {
+                                "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/c45d4f0624afdf8a10b4d01b947c23cc1289f7ac"
+                            },
+                            "html": {
+                                "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/commits\/c45d4f0624afdf8a10b4d01b947c23cc1289f7ac"
+                            }
+                        }
+                    },
+                    {
+                        "type": "commit",
+                        "hash": "2446cb4c23915e54ad7083a09da0eec92163ae3d",
+                        "links": {
+                            "self": {
+                                "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commit\/2446cb4c23915e54ad7083a09da0eec92163ae3d"
+                            },
+                            "html": {
+                                "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/commits\/2446cb4c23915e54ad7083a09da0eec92163ae3d"
+                            }
+                        }
+                    }
+                ],
+                "date": "2019-05-21T11:50:17+00:00",
+                "message": "Merged in develop (pull request #242)\n\nHandover fixes\n",
+                "type": "commit"
+            },
+            "links": {
+                "commits": {
+                    "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/commits\/releases\/1.1"
+                },
+                "self": {
+                    "href": "https:\/\/bitbucket.org\/!api\/2.0\/repositories\/d2_website_repositories\/timotei\/refs\/branches\/releases\/1.1"
+                },
+                "html": {
+                    "href": "https:\/\/bitbucket.org\/d2_website_repositories\/timotei\/branch\/releases\/1.1"
+                }
+            },
+            "default_merge_strategy": "merge_commit",
+            "merge_strategies": [
+                "merge_commit",
+                "squash",
+                "fast_forward"
+            ],
+            "type": "branch",
+            "name": "releases\/1.1"
+        }
+    ],
+    "page": 1,
+    "size": 42
+}

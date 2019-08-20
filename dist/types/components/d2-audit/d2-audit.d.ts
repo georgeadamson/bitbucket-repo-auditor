@@ -4,6 +4,8 @@ export declare class D2Audit {
     treeUrl: string;
     repo: string;
     branch: string;
+    isBitbucket: boolean;
+    isValidRepo: boolean;
     tree: BitbucketRepoTreeJsonType[];
     componentWillLoad(): Promise<unknown>;
     render(): any;

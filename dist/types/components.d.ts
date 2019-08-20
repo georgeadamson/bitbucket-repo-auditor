@@ -17,6 +17,8 @@ export namespace Components {
     'repo': string;
     'treeUrl': string;
   }
+  interface D2AuditBranches {}
+  interface D2AuditRepos {}
   interface D2AuditResults {
     'brand': string;
     'tree': BitbucketRepoTreeJsonType[];
@@ -46,6 +48,18 @@ declare global {
     new (): HTMLD2AuditElement;
   };
 
+  interface HTMLD2AuditBranchesElement extends Components.D2AuditBranches, HTMLStencilElement {}
+  var HTMLD2AuditBranchesElement: {
+    prototype: HTMLD2AuditBranchesElement;
+    new (): HTMLD2AuditBranchesElement;
+  };
+
+  interface HTMLD2AuditReposElement extends Components.D2AuditRepos, HTMLStencilElement {}
+  var HTMLD2AuditReposElement: {
+    prototype: HTMLD2AuditReposElement;
+    new (): HTMLD2AuditReposElement;
+  };
+
   interface HTMLD2AuditResultsElement extends Components.D2AuditResults, HTMLStencilElement {}
   var HTMLD2AuditResultsElement: {
     prototype: HTMLD2AuditResultsElement;
@@ -59,6 +73,8 @@ declare global {
   };
   interface HTMLElementTagNameMap {
     'd2-audit': HTMLD2AuditElement;
+    'd2-audit-branches': HTMLD2AuditBranchesElement;
+    'd2-audit-repos': HTMLD2AuditReposElement;
     'd2-audit-results': HTMLD2AuditResultsElement;
     'my-component': HTMLMyComponentElement;
   }
@@ -70,6 +86,12 @@ declare namespace LocalJSX {
     'brand'?: string;
     'repo'?: string;
     'treeUrl'?: string;
+  }
+  interface D2AuditBranches extends JSXBase.HTMLAttributes<HTMLD2AuditBranchesElement> {
+    'onChangeBranch'?: (event: CustomEvent<any>) => void;
+  }
+  interface D2AuditRepos extends JSXBase.HTMLAttributes<HTMLD2AuditReposElement> {
+    'onChangeRepo'?: (event: CustomEvent<any>) => void;
   }
   interface D2AuditResults extends JSXBase.HTMLAttributes<HTMLD2AuditResultsElement> {
     'brand'?: string;
@@ -92,6 +114,8 @@ declare namespace LocalJSX {
 
   interface IntrinsicElements {
     'd2-audit': D2Audit;
+    'd2-audit-branches': D2AuditBranches;
+    'd2-audit-repos': D2AuditRepos;
     'd2-audit-results': D2AuditResults;
     'my-component': MyComponent;
   }

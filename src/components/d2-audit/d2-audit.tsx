@@ -1,7 +1,8 @@
 import { Component, Prop, State, h } from '@stencil/core';
 import by from '../../utils/array/filterBy';
 import { BitbucketRepoTreeJsonType } from '../../utils/types/BitbucketTypes';
-import DEMO_TREE_JSON_FROM_FILE from './repo-tree.axe.json';
+import getRepoName from '../../utils/bitbucket/getRepoName';
+import DEMO_REPO_TREE_JSON_FROM_FILE from './repo-tree.axe.json';
 
 const DEFAULT_TREE_URL =
   'https://bitbucket.org/!api/internal/repositories/d2_website_repositories/dove-uk-uidesign/tree/9082f993ff3c3c7b3e505b59c96fe6e274a4f6db/?no_size=1';
@@ -20,14 +21,14 @@ export class D2Audit {
   @Prop() repo: string;
   @Prop() branch: string;
 
+  @State() isBitbucket: boolean;
+  @State() isValidRepo: boolean;
   @State() tree: BitbucketRepoTreeJsonType[];
 
   componentWillLoad() {
-    const urlMatches =
-      location.href.match(/d2_website_repositories\/([^\/]+)\/src\/([^\/]+)/) ||
-      [];
-    this.repo = urlMatches[1];
-    this.branch = urlMatches[1];
+    // Extract repo name and branch from bitbucket url:
+    const { repo, branch, isValidRepo, isBitbucket } = getRepoName();
+    Object.assign(this, { repo, branch, isValidRepo, isBitbucket });
 
     return (
       // fetch(this.treeUrl)
@@ -35,7 +36,7 @@ export class D2Audit {
       // .then(json => (this.treeJson = JSON.parse(json)));
 
       new Promise(resolve => {
-        resolve((this.tree = DEMO_TREE_JSON_FROM_FILE));
+        resolve((this.tree = DEMO_REPO_TREE_JSON_FROM_FILE));
       })
     );
   }
