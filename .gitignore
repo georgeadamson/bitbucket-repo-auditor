@@ -9,5 +9,5 @@ yarn-error.log*
 node_modules
 
 # Build folders
-www
-dist
+# www
+# dist
