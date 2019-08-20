@@ -1,7 +1,10 @@
 // Bookmarklet to inject d2-repo-tools into a repo page.
 // Inspired by https://unpkg.com/browse/d2-bitbucket-repo-component-audit/dist/d2-repo-tools.js
 
-javascript: (function(doc) {
+// Bookmarklet:
+// javascript:(function(d){var s=d.createElement('script');s.src='https://unpkg.com/d2-bitbucket-repo-component-audit/dist/collection/bookmarklet.js';d.head.append(s)})(document)
+
+(function(doc) {
   var url =
     'https://unpkg.com/d2-bitbucket-repo-component-audit/dist/d2-repo-tools';
 
