@@ -74,22 +74,30 @@ export class D2AuditRepos {
       ? 'Open a bitbucket repo and try this again'
       : null;
 
+    const options = isLoaded ? (
+      [<option value="">Choose repo...</option>].concat(
+        ...this.repos.values.sort(byName).map(repo => {
+          const selected =
+            repo.name.toUpperCase() === selectedRepo ? true : null;
+          return <option selected={selected}>{repo.name}</option>;
+        })
+      )
+    ) : (
+      <option>Fetching repos...</option>
+    );
+
     return (
       <div>
-        {(message && <p>{message}</p>) || (
-          <select onChange={this.onChangeRepo} data-disabled={!isLoaded}>
-            {isLoaded ? (
-              this.repos.values.sort(byName).map(repo => {
-                const selected =
-                  repo.name.toUpperCase() === selectedRepo ? true : null;
-
-                return <option selected={selected}>{repo.name}</option>;
-              })
-            ) : (
-              <option>Fetching repos...</option>
-            )}
+        {(message && <p>{message}</p>) || [
+          <label htmlFor="d2-repos">Repository</label>,
+          <select
+            id="d2-repos"
+            onChange={this.onChangeRepo}
+            data-disabled={!isLoaded}
+          >
+            {options}
           </select>
-        )}
+        ]}
       </div>
     );
   }

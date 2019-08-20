@@ -1,7 +1,7 @@
-import { Component, Prop, State, h } from '@stencil/core';
+import { Component, Prop, State, Listen, h } from '@stencil/core';
 import by from '../../utils/array/filterBy';
 import { BitbucketRepoTreeJsonType } from '../../utils/types/BitbucketTypes';
-import getRepoName from '../../utils/bitbucket/getRepoName';
+import getRepoNameFromUrl from '../../utils/bitbucket/getRepoName';
 import DEMO_REPO_TREE_JSON_FROM_FILE from './repo-tree.axe.json';
 
 const DEFAULT_TREE_URL =
@@ -25,10 +25,17 @@ export class D2Audit {
   @State() isValidRepo: boolean;
   @State() tree: BitbucketRepoTreeJsonType[];
 
+  // Handle event raised by <d2-audit-repos>
+  @Listen('changeRepo')
+  repoChanged(e) {
+    const { repo, brand } = e && e.detail;
+    if (repo) this.repo = repo;
+    if (brand) this.brand = brand;
+  }
+
   componentWillLoad() {
     // Extract repo name and branch from bitbucket url:
-    const { repo, branch, isValidRepo, isBitbucket } = getRepoName();
-    Object.assign(this, { repo, branch, isValidRepo, isBitbucket });
+    Object.assign(this, getRepoNameFromUrl());
 
     return (
       // fetch(this.treeUrl)
@@ -44,6 +51,7 @@ export class D2Audit {
   render() {
     return (
       <div>
+        <d2-audit-repos />
         <select
           onChange={e => (this.brand = (e.target as HTMLSelectElement).value)}
         >
@@ -53,7 +61,6 @@ export class D2Audit {
               <option>{folder.name}</option>
             ))}
         </select>
-
         <d2-audit-results brand={this.brand} tree={this.tree} />
       </div>
     );
