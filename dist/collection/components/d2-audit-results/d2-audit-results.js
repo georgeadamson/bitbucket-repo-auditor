@@ -52,6 +52,40 @@ export class D2AuditResults {
         "$": ["d2-audit-results.css"]
     }; }
     static get properties() { return {
+        "repo": {
+            "type": "string",
+            "mutable": false,
+            "complexType": {
+                "original": "string",
+                "resolved": "string",
+                "references": {}
+            },
+            "required": false,
+            "optional": false,
+            "docs": {
+                "tags": [],
+                "text": ""
+            },
+            "attribute": "repo",
+            "reflect": false
+        },
+        "branch": {
+            "type": "string",
+            "mutable": false,
+            "complexType": {
+                "original": "string",
+                "resolved": "string",
+                "references": {}
+            },
+            "required": false,
+            "optional": false,
+            "docs": {
+                "tags": [],
+                "text": ""
+            },
+            "attribute": "branch",
+            "reflect": false
+        },
         "brand": {
             "type": "string",
             "mutable": false,
@@ -74,10 +108,10 @@ export class D2AuditResults {
             "type": "unknown",
             "mutable": false,
             "complexType": {
-                "original": "BitbucketRepoTreeJsonType[]",
-                "resolved": "BitbucketRepoTreeJsonType[]",
+                "original": "BitbucketRepoTreeNode[]",
+                "resolved": "BitbucketRepoTreeNode[]",
                 "references": {
-                    "BitbucketRepoTreeJsonType": {
+                    "BitbucketRepoTreeNode": {
                         "location": "import",
                         "path": "../../utils/types/BitbucketTypes"
                     }

@@ -1,16 +1,24 @@
 {
   "entries": [
+    "components/d2-audit-branches/d2-audit-branches.js",
+    "components/d2-audit-brands/d2-audit-brands.js",
     "components/d2-audit-repos/d2-audit-repos.js",
-    "components/d2-audit-results/d2-audit-results.js",
     "components/d2-audit/d2-audit.js",
-    "components/my-component/my-component.js",
-    "components/d2-audit-branches/d2-audit-branches.js"
+    "components/d2-audit-results/d2-audit-results.js",
+    "components/my-component/my-component.js"
   ],
   "compiler": {
     "name": "@stencil/core",
     "version": "1.0.7",
     "typescriptVersion": "3.5.2"
   },
-  "collections": [],
+  "collections": [
+    {
+      "name": "@stencil/state-tunnel",
+      "tags": [
+        "context-consumer"
+      ]
+    }
+  ],
   "bundles": []
 }

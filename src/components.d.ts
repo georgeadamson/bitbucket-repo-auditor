@@ -7,7 +7,7 @@
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
-  BitbucketRepoTreeJsonType,
+  BitbucketRepoTreeNode,
 } from './utils/types/BitbucketTypes';
 
 export namespace Components {
@@ -17,11 +17,16 @@ export namespace Components {
     'repo': string;
     'treeUrl': string;
   }
-  interface D2AuditBranches {}
+  interface D2AuditBranches {
+    'repo': string;
+  }
+  interface D2AuditBrands {}
   interface D2AuditRepos {}
   interface D2AuditResults {
+    'branch': string;
     'brand': string;
-    'tree': BitbucketRepoTreeJsonType[];
+    'repo': string;
+    'tree': BitbucketRepoTreeNode[];
   }
   interface MyComponent {
     /**
@@ -54,6 +59,12 @@ declare global {
     new (): HTMLD2AuditBranchesElement;
   };
 
+  interface HTMLD2AuditBrandsElement extends Components.D2AuditBrands, HTMLStencilElement {}
+  var HTMLD2AuditBrandsElement: {
+    prototype: HTMLD2AuditBrandsElement;
+    new (): HTMLD2AuditBrandsElement;
+  };
+
   interface HTMLD2AuditReposElement extends Components.D2AuditRepos, HTMLStencilElement {}
   var HTMLD2AuditReposElement: {
     prototype: HTMLD2AuditReposElement;
@@ -74,6 +85,7 @@ declare global {
   interface HTMLElementTagNameMap {
     'd2-audit': HTMLD2AuditElement;
     'd2-audit-branches': HTMLD2AuditBranchesElement;
+    'd2-audit-brands': HTMLD2AuditBrandsElement;
     'd2-audit-repos': HTMLD2AuditReposElement;
     'd2-audit-results': HTMLD2AuditResultsElement;
     'my-component': HTMLMyComponentElement;
@@ -88,14 +100,20 @@ declare namespace LocalJSX {
     'treeUrl'?: string;
   }
   interface D2AuditBranches extends JSXBase.HTMLAttributes<HTMLD2AuditBranchesElement> {
-    'onChangeBranch'?: (event: CustomEvent<any>) => void;
+    'onChangebranch'?: (event: CustomEvent<any>) => void;
+    'repo'?: string;
+  }
+  interface D2AuditBrands extends JSXBase.HTMLAttributes<HTMLD2AuditBrandsElement> {
+    'onChangerepo'?: (event: CustomEvent<any>) => void;
   }
   interface D2AuditRepos extends JSXBase.HTMLAttributes<HTMLD2AuditReposElement> {
-    'onChangeRepo'?: (event: CustomEvent<any>) => void;
+    'onChangerepo'?: (event: CustomEvent<any>) => void;
   }
   interface D2AuditResults extends JSXBase.HTMLAttributes<HTMLD2AuditResultsElement> {
+    'branch'?: string;
     'brand'?: string;
-    'tree'?: BitbucketRepoTreeJsonType[];
+    'repo'?: string;
+    'tree'?: BitbucketRepoTreeNode[];
   }
   interface MyComponent extends JSXBase.HTMLAttributes<HTMLMyComponentElement> {
     /**
@@ -115,6 +133,7 @@ declare namespace LocalJSX {
   interface IntrinsicElements {
     'd2-audit': D2Audit;
     'd2-audit-branches': D2AuditBranches;
+    'd2-audit-brands': D2AuditBrands;
     'd2-audit-repos': D2AuditRepos;
     'd2-audit-results': D2AuditResults;
     'my-component': MyComponent;

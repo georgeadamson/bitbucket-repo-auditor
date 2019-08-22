@@ -10,7 +10,7 @@
 | Property | Attribute | Description | Type                          | Default     |
 | -------- | --------- | ----------- | ----------------------------- | ----------- |
 | `brand`  | `brand`   |             | `string`                      | `'dove'`    |
-| `tree`   | --        |             | `BitbucketRepoTreeJsonType[]` | `undefined` |
+| `tree`   | --        |             | `BitbucketRepoTreeNode[]` | `undefined` |
 
 
 ## Dependencies

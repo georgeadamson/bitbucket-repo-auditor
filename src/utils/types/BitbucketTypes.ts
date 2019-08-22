@@ -1,5 +1,7 @@
-export type BitbucketRepoTreeJsonType = {
+export type BitbucketRepoTreeNode = {
   name: string;
   type: string;
-  contents: any[]; //BitbucketRepoTreeJsonType[];
+  contents: any[]; //BitbucketRepoTreeNode[];
 };
+
+export type BitbucketRepoNodeType = 'repository' | 'branch' | 'directory';

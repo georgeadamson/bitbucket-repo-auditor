@@ -20,7 +20,7 @@
   elem.src = url + '/d2-repo-tools.js';
   doc.head.appendChild(elem);
 
-  // Inject our custom component:
+  // Inject our custom component in the page:
   elem = doc.createElement('d2-audit');
   doc.body.appendChild(elem);
 })(document);

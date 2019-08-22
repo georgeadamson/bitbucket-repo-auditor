@@ -2,7 +2,7 @@ import { Component, Prop, State, Watch, h } from '@stencil/core';
 import by from '../../utils/array/filterBy';
 //import DEFAULT_TREE_JSON from './repo-tree.dove.json';
 
-import { BitbucketRepoTreeJsonType } from '../../utils/types/BitbucketTypes';
+import { BitbucketRepoTreeNode } from '../../utils/types/BitbucketTypes';
 
 const byAppFolder = by({ name: 'app', type: 'directory' });
 
@@ -12,8 +12,10 @@ const byAppFolder = by({ name: 'app', type: 'directory' });
   shadow: true
 })
 export class D2AuditResults {
+  @Prop() repo: string;
+  @Prop() branch: string;
   @Prop() brand: string = 'dove';
-  @Prop() tree: BitbucketRepoTreeJsonType[]; //= DEFAULT_TREE_JSON;
+  @Prop() tree: BitbucketRepoTreeNode[]; //= DEFAULT_TREE_JSON;
 
   @State() brandDir: any;
 
@@ -151,7 +153,7 @@ function getSimpleTreeOf(nodes = [], filter = {}) {
 // Helper to recurse through node tree to find the one matching name:
 // Note this does not support paths. It just returns the first match by name.
 function getNode(
-  nodes: BitbucketRepoTreeJsonType[],
+  nodes: BitbucketRepoTreeNode[],
   name,
   type = 'directory',
   byName = by({ name, type })

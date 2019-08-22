@@ -1,22 +1,24 @@
 import { Component, State, Event, EventEmitter, Watch, h } from '@stencil/core';
 import getRepoName from '../../utils/bitbucket/getRepoName';
 import getRepos from '../../utils/bitbucket/getRepos';
+import RepoState from '../state/repo-state';
 
 // This component fetches a list of all repos and displays them in a picklist.
 
 const isLocalhost = location.hostname === 'localhost';
 
 @Component({
-  tag: 'd2-audit-repos',
-  styleUrl: 'd2-audit-repos.scss',
+  tag: 'd2-audit-brands',
+  styleUrl: 'd2-audit-brands.scss',
   shadow: true
 })
-export class D2AuditRepos {
+export class D2AuditBrands {
   // Will be populated by getRepoName()
   @State() isBitbucket: boolean;
   @State() isValidRepo: boolean;
   @State() repo: string;
   @State() branch: string;
+  @State() brand: string;
 
   // Will be populated by json from API:
   @State() repos: { [key: string]: any };
@@ -24,13 +26,11 @@ export class D2AuditRepos {
   // Event to pass repo name to other components:
   @Event() changerepo: EventEmitter;
 
-  @Watch('repo')
+  @Watch('brand')
   repoChanged() {
-    const { repo, branch } = this;
+    const { repo, branch, brand } = this;
     // Raise event to pass selected repo name to other components:
-    if (repo) {
-      this.changerepo.emit({ repo, branch });
-    }
+    this.changerepo.emit({ repo, branch, brand });
   }
 
   componentWillLoad() {
@@ -56,13 +56,14 @@ export class D2AuditRepos {
   }
 
   // Handler to read selected repo name from picklist if applicable:
-  onChangeRepo = (e?: Event) => {
-    if (e && e.target) this.repo = (e.target as HTMLSelectElement).value;
+  onChangeBrand = (e?: Event) => {
+    if (e && e.target) this.brand = (e.target as HTMLSelectElement).value;
   };
 
   render() {
+    console.log('BRANDS', this.repo, this.branch);
     const selectedRepo = this.repo && this.repo.toUpperCase();
-    const { isBitbucket, isValidRepo } = this;
+    const { repo, branch, isBitbucket, isValidRepo } = this;
     const isLoaded =
       this.repos && this.repos.values && this.repos.values.length;
     const message = isLocalhost
@@ -88,11 +89,17 @@ export class D2AuditRepos {
     return (
       <div>
         {(message && <p>{message}</p>) || [
-          <label htmlFor="d2-repos">Repository</label>,
+          <label htmlFor="d2-repos">
+            Brand folder{' '}
+            <small>
+              {repo ? `in repo ${repo}` : ''}
+              {branch ? `: ${branch}` : ''}
+            </small>
+          </label>,
           <select
             id="d2-repos"
             disabled={!isLoaded}
-            onChange={this.onChangeRepo}
+            onChange={this.onChangeBrand}
           >
             {options}
           </select>
@@ -102,12 +109,10 @@ export class D2AuditRepos {
   }
 }
 
+// Shared state:
+RepoState.injectProps(D2AuditBrands, ['repo', 'branch', 'brand']);
+
 // Helper for sorting an array of file objects by name:
 function byName(fileA, fileB) {
   return fileA.name.localeCompare(fileB.name);
 }
-
-// function delay(duration) {
-//   return arg =>
-//     new Promise(resolve => setTimeout(() => resolve(arg), duration));
-// }

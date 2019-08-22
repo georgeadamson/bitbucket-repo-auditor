@@ -1,13 +1,14 @@
 import { Component, Prop, State, Listen, h } from '@stencil/core';
-import by from '../../utils/array/filterBy';
-import { BitbucketRepoTreeJsonType } from '../../utils/types/BitbucketTypes';
-import getRepoNameFromUrl from '../../utils/bitbucket/getRepoName';
+import {
+  findNode,
+  getRepoName as getRepoNameFromUrl,
+  BitbucketRepoTreeNode
+} from '../../utils/bitbucket';
 import DEMO_REPO_TREE_JSON_FROM_FILE from './repo-tree.axe.json';
+import RepoState from '../state/repo-state';
 
 const DEFAULT_TREE_URL =
   'https://bitbucket.org/!api/internal/repositories/d2_website_repositories/dove-uk-uidesign/tree/9082f993ff3c3c7b3e505b59c96fe6e274a4f6db/?no_size=1';
-
-const byAppFolder = by({ name: 'app', type: 'directory' });
 
 @Component({
   tag: 'd2-audit',
@@ -15,22 +16,25 @@ const byAppFolder = by({ name: 'app', type: 'directory' });
   shadow: true
 })
 export class D2Audit {
-  @Prop() brand = 'axe';
   @Prop() treeUrl = DEFAULT_TREE_URL;
 
   @Prop() repo: string;
   @Prop() branch: string;
+  @Prop() brand: string;
 
   @State() isBitbucket: boolean;
   @State() isValidRepo: boolean;
-  @State() tree: BitbucketRepoTreeJsonType[];
+  @State() tree: BitbucketRepoTreeNode[];
 
   // Handle event raised by <d2-audit-repos>
-  @Listen('changeRepo')
-  repoChanged(e) {
-    const { repo, brand } = e && e.detail;
+  @Listen('changerepo')
+  @Listen('changebranch')
+  @Listen('changebrand')
+  repoChanged(e: CustomEvent) {
+    const { repo, branch, brand } = e && e.detail;
     if (repo) this.repo = repo;
     if (brand) this.brand = brand;
+    if (branch) this.branch = branch;
   }
 
   componentWillLoad() {
@@ -49,43 +53,40 @@ export class D2Audit {
   }
 
   render() {
+    const { repo, branch, brand } = this;
+
+    const state = {
+      repo,
+      branch,
+      brand
+    };
+
     return (
       <div>
-        <d2-audit-repos />
-        <select
-          onChange={e => (this.brand = (e.target as HTMLSelectElement).value)}
-        >
-          {this.getAppFolder()
-            .contents.sort(byFileName)
-            .map(folder => (
-              <option>{folder.name}</option>
-            ))}
-        </select>
-        <d2-audit-results brand={this.brand} tree={this.tree} />
+        <RepoState.Provider state={state}>
+          <d2-audit-repos />
+          <d2-audit-branches />
+          <d2-audit-brands />
+          <d2-audit-results tree={this.tree} />
+
+          <select
+            onChange={e => (this.brand = (e.target as HTMLSelectElement).value)}
+          >
+            {this.getAppFolder()
+              .contents.sort(byFileName)
+              .map(folder => (
+                <option>{folder.name}</option>
+              ))}
+          </select>
+        </RepoState.Provider>
       </div>
     );
   }
 
-  getAppFolder = () =>
-    getNode(this.tree, 'unilever-platform').contents.find(byAppFolder);
+  getAppFolder = () => findNode(this.tree, 'unilever-platform/app');
 
-  getProjectNode = () =>
-    this.getAppFolder().contents.find(
-      by({ name: this.brand, type: 'directory' })
-    );
-}
-
-// Helper to recurse through node tree to find the one matching name:
-// Note this does not support paths. It just returns the first match by name.
-function getNode(nodes, name, type = 'directory', byName = by({ name, type })) {
-  return (
-    (nodes &&
-      (nodes.find(byName) ||
-        nodes
-          .map(node => getNode(node.contents, name, type, byName))
-          .find(byName))) ||
-    null
-  );
+  getBrandNode = () =>
+    findNode(this.tree, `unilever-platform/app/${this.brand}`);
 }
 
 // Helper for sorting an array of file objects by name:

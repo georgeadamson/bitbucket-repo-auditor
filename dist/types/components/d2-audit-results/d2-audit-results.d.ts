@@ -1,7 +1,9 @@
-import { BitbucketRepoTreeJsonType } from '../../utils/types/BitbucketTypes';
+import { BitbucketRepoTreeNode } from '../../utils/types/BitbucketTypes';
 export declare class D2AuditResults {
+    repo: string;
+    branch: string;
     brand: string;
-    tree: BitbucketRepoTreeJsonType[];
+    tree: BitbucketRepoTreeNode[];
     brandDir: any;
     componentWillLoad(): void;
     onTreeChange(): void;

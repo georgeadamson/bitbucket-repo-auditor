@@ -31,6 +31,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@stencil/state-tunnel": "^1.0.1",
     "foundation-sites": "^6.5.3",
     "lodash": "^4.17.15"
   }
