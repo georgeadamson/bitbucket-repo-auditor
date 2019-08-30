@@ -88,7 +88,7 @@ export class D2AuditRepos {
     return (
       <div>
         {message && <p>{message}</p>}
-        <label htmlFor="d2-repos">Repository</label>,
+        <label htmlFor="d2-repos">Repository</label>
         <select id="d2-repos" disabled={!isLoaded} onChange={this.onChangeRepo}>
           {options}
         </select>
