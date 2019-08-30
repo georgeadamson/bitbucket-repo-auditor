@@ -4,6 +4,7 @@ import { sass } from '@stencil/sass';
 export const config: Config = {
   namespace: 'd2-repo-tools',
   plugins: [sass()],
+  // globalScript: 'src/global/app.ts',
   outputTargets: [
     {
       type: 'dist',

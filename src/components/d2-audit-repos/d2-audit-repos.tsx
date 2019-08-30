@@ -1,10 +1,16 @@
-import { Component, State, Event, EventEmitter, Watch, h } from '@stencil/core';
-import getRepoName from '../../utils/bitbucket/getRepoName';
-import getRepos from '../../utils/bitbucket/getRepos';
+import {
+  Component,
+  State,
+  Event,
+  EventEmitter,
+  Prop,
+  Watch,
+  h
+} from '@stencil/core';
+import Options from '../Options/Options';
+import { getRepoName, getRepos, RepoState } from '../../utils/bitbucket';
 
 // This component fetches a list of all repos and displays them in a picklist.
-
-const isLocalhost = location.hostname === 'localhost';
 
 @Component({
   tag: 'd2-audit-repos',
@@ -12,7 +18,10 @@ const isLocalhost = location.hostname === 'localhost';
   shadow: true
 })
 export class D2AuditRepos {
+  @Prop() project: string = 'd2_website_repositories';
+
   // Will be populated by getRepoName()
+  @State() isLocalhost: boolean;
   @State() isBitbucket: boolean;
   @State() isValidRepo: boolean;
   @State() repo: string;
@@ -34,25 +43,18 @@ export class D2AuditRepos {
   }
 
   componentWillLoad() {
-    // Attempt to extract repo name and branch from bitbucket url:
-    Object.assign(this, getRepoName());
+    const { project, repo } = this;
 
-    if (this.repo) {
-      // Display a fake list of one repo until the api fetches the full list:
-      this.repos = {
-        values: [{ name: this.repo, type: 'repository' }]
-      };
+    // Attempt to extract repo name and branch from bitbucket url:
+    Object.assign(this, getRepoName(project));
+
+    // Display a fake list of one repo until the api fetches the full list:
+    if (repo) {
+      this.repos = { values: [{ name: repo, type: 'repository' }] };
     }
 
     // Fetch list of repos from API:
-    this.isValidRepo
-      ? getRepos().then(json => (this.repos = json))
-      : // Fetch demo data when testing on localhost:
-      isLocalhost
-      ? import('./repos-tree.all.json').then(
-          module => (this.repos = module.default)
-        )
-      : null;
+    getRepos(project).then(json => (this.repos = json));
   }
 
   // Handler to read selected repo name from picklist if applicable:
@@ -62,7 +64,7 @@ export class D2AuditRepos {
 
   render() {
     const selectedRepo = this.repo && this.repo.toUpperCase();
-    const { isBitbucket, isValidRepo } = this;
+    const { isLocalhost, isBitbucket, isValidRepo } = this;
     const isLoaded =
       this.repos && this.repos.values && this.repos.values.length;
     const message = isLocalhost
@@ -74,40 +76,31 @@ export class D2AuditRepos {
       : null;
 
     const options = isLoaded ? (
-      [<option value="">Choose repo...</option>].concat(
-        ...this.repos.values.sort(byName).map(repo => {
-          const selected =
-            repo.name.toUpperCase() === selectedRepo ? true : null;
-          return <option selected={selected}>{repo.name}</option>;
-        })
-      )
+      <Options
+        prompt="Choose repo.."
+        selected={selectedRepo}
+        items={this.repos.values.sort(byName)}
+      />
     ) : (
       <option>Fetching repos...</option>
     );
 
     return (
       <div>
-        {(message && <p>{message}</p>) || [
-          <label htmlFor="d2-repos">Repository</label>,
-          <select
-            id="d2-repos"
-            disabled={!isLoaded}
-            onChange={this.onChangeRepo}
-          >
-            {options}
-          </select>
-        ]}
+        {message && <p>{message}</p>}
+        <label htmlFor="d2-repos">Repository</label>,
+        <select id="d2-repos" disabled={!isLoaded} onChange={this.onChangeRepo}>
+          {options}
+        </select>
       </div>
     );
   }
 }
 
-// Helper for sorting an array of file objects by name:
+// Shared state:
+RepoState.injectProps(D2AuditRepos, ['project', 'repo', 'branch', 'brand']);
+
+// Helper for sorting an array of file objects by file.name:
 function byName(fileA, fileB) {
   return fileA.name.localeCompare(fileB.name);
 }
-
-// function delay(duration) {
-//   return arg =>
-//     new Promise(resolve => setTimeout(() => resolve(arg), duration));
-// }

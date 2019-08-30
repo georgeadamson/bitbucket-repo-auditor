@@ -1,7 +1,8 @@
 export type BitbucketRepoTreeNode = {
   name: string;
-  type: string;
-  contents: any[]; //BitbucketRepoTreeNode[];
+  type: BitbucketRepoNodeType;
+  //values?: BitbucketRepoTreeNode[]; //BitbucketRepoTreeNode[];
+  contents?: BitbucketRepoTreeNode[]; //BitbucketRepoTreeNode[];
 };
 
 export type BitbucketRepoNodeType = 'repository' | 'branch' | 'directory';

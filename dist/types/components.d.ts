@@ -8,39 +8,31 @@
 import { HTMLStencilElement, JSXBase } from './stencil.core';
 import {
   BitbucketRepoTreeNode,
-} from './utils/types/BitbucketTypes';
+} from './utils/bitbucket';
 
 export namespace Components {
   interface D2Audit {
     'branch': string;
     'brand': string;
+    'project': string;
     'repo': string;
-    'treeUrl': string;
   }
   interface D2AuditBranches {
+    'project': string;
     'repo': string;
   }
-  interface D2AuditBrands {}
-  interface D2AuditRepos {}
+  interface D2AuditBrands {
+    'project': string;
+  }
+  interface D2AuditRepos {
+    'project': string;
+  }
   interface D2AuditResults {
     'branch': string;
     'brand': string;
+    'project': string;
     'repo': string;
     'tree': BitbucketRepoTreeNode[];
-  }
-  interface MyComponent {
-    /**
-    * The first name
-    */
-    'first': string;
-    /**
-    * The last name
-    */
-    'last': string;
-    /**
-    * The middle name
-    */
-    'middle': string;
   }
 }
 
@@ -76,19 +68,12 @@ declare global {
     prototype: HTMLD2AuditResultsElement;
     new (): HTMLD2AuditResultsElement;
   };
-
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
-  };
   interface HTMLElementTagNameMap {
     'd2-audit': HTMLD2AuditElement;
     'd2-audit-branches': HTMLD2AuditBranchesElement;
     'd2-audit-brands': HTMLD2AuditBrandsElement;
     'd2-audit-repos': HTMLD2AuditReposElement;
     'd2-audit-results': HTMLD2AuditResultsElement;
-    'my-component': HTMLMyComponentElement;
   }
 }
 
@@ -96,38 +81,28 @@ declare namespace LocalJSX {
   interface D2Audit extends JSXBase.HTMLAttributes<HTMLD2AuditElement> {
     'branch'?: string;
     'brand'?: string;
+    'project'?: string;
     'repo'?: string;
-    'treeUrl'?: string;
   }
   interface D2AuditBranches extends JSXBase.HTMLAttributes<HTMLD2AuditBranchesElement> {
     'onChangebranch'?: (event: CustomEvent<any>) => void;
+    'project'?: string;
     'repo'?: string;
   }
   interface D2AuditBrands extends JSXBase.HTMLAttributes<HTMLD2AuditBrandsElement> {
-    'onChangerepo'?: (event: CustomEvent<any>) => void;
+    'onChangebrand'?: (event: CustomEvent<any>) => void;
+    'project'?: string;
   }
   interface D2AuditRepos extends JSXBase.HTMLAttributes<HTMLD2AuditReposElement> {
     'onChangerepo'?: (event: CustomEvent<any>) => void;
+    'project'?: string;
   }
   interface D2AuditResults extends JSXBase.HTMLAttributes<HTMLD2AuditResultsElement> {
     'branch'?: string;
     'brand'?: string;
+    'project'?: string;
     'repo'?: string;
     'tree'?: BitbucketRepoTreeNode[];
-  }
-  interface MyComponent extends JSXBase.HTMLAttributes<HTMLMyComponentElement> {
-    /**
-    * The first name
-    */
-    'first'?: string;
-    /**
-    * The last name
-    */
-    'last'?: string;
-    /**
-    * The middle name
-    */
-    'middle'?: string;
   }
 
   interface IntrinsicElements {
@@ -136,7 +111,6 @@ declare namespace LocalJSX {
     'd2-audit-brands': D2AuditBrands;
     'd2-audit-repos': D2AuditRepos;
     'd2-audit-results': D2AuditResults;
-    'my-component': MyComponent;
   }
 }
 

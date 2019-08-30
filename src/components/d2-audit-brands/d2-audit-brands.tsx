@@ -1,11 +1,21 @@
-import { Component, State, Event, EventEmitter, Watch, h } from '@stencil/core';
-import getRepoName from '../../utils/bitbucket/getRepoName';
-import getRepos from '../../utils/bitbucket/getRepos';
-import RepoState from '../state/repo-state';
+import {
+  Component,
+  State,
+  Event,
+  EventEmitter,
+  Watch,
+  Prop,
+  h
+} from '@stencil/core';
+import Options from '../Options/Options';
+import {
+  getRepoName,
+  getRepoBranchBrands as getBrands,
+  BitbucketRepoTreeNode,
+  RepoState
+} from '../../utils/bitbucket';
 
 // This component fetches a list of all repos and displays them in a picklist.
-
-const isLocalhost = location.hostname === 'localhost';
 
 @Component({
   tag: 'd2-audit-brands',
@@ -13,7 +23,10 @@ const isLocalhost = location.hostname === 'localhost';
   shadow: true
 })
 export class D2AuditBrands {
+  @Prop() project: string = 'd2_website_repositories';
+
   // Will be populated by getRepoName()
+  @State() isLocalhost: boolean;
   @State() isBitbucket: boolean;
   @State() isValidRepo: boolean;
   @State() repo: string;
@@ -21,38 +34,37 @@ export class D2AuditBrands {
   @State() brand: string;
 
   // Will be populated by json from API:
-  @State() repos: { [key: string]: any };
+  @State() brands: BitbucketRepoTreeNode[];
 
   // Event to pass repo name to other components:
-  @Event() changerepo: EventEmitter;
+  @Event() changebrand: EventEmitter;
 
   @Watch('brand')
-  repoChanged() {
+  brandChanged() {
     const { repo, branch, brand } = this;
     // Raise event to pass selected repo name to other components:
-    this.changerepo.emit({ repo, branch, brand });
+    this.changebrand.emit({ repo, branch, brand });
+  }
+
+  @Watch('repo')
+  @Watch('branch')
+  branchChanged() {
+    const { project, repo, branch } = this;
+
+    // Fetch list of repos from API:
+    if (repo && branch) {
+      getBrands(project, repo, branch).then(appSubfolders => {
+        this.brands = appSubfolders;
+      });
+    }
   }
 
   componentWillLoad() {
     // Attempt to extract repo name and branch from bitbucket url:
-    Object.assign(this, getRepoName());
-
-    if (this.repo) {
-      // Display a fake list of one repo until the api fetches the full list:
-      this.repos = {
-        values: [{ name: this.repo, type: 'repository' }]
-      };
-    }
+    Object.assign(this, getRepoName(this.project));
 
     // Fetch list of repos from API:
-    this.isValidRepo
-      ? getRepos().then(json => (this.repos = json))
-      : // Fetch demo data when testing on localhost:
-      isLocalhost
-      ? import('./repos-tree.all.json').then(
-          module => (this.repos = module.default)
-        )
-      : null;
+    this.branchChanged();
   }
 
   // Handler to read selected repo name from picklist if applicable:
@@ -61,11 +73,18 @@ export class D2AuditBrands {
   };
 
   render() {
-    console.log('BRANDS', this.repo, this.branch);
-    const selectedRepo = this.repo && this.repo.toUpperCase();
-    const { repo, branch, isBitbucket, isValidRepo } = this;
-    const isLoaded =
-      this.repos && this.repos.values && this.repos.values.length;
+    console.log('BRANDS', this.repo, this.branch, this.brands);
+
+    const selectedBrand = this.brand && this.brand.toUpperCase();
+    const {
+      repo,
+      branch,
+      brands,
+      isBitbucket,
+      isValidRepo,
+      isLocalhost
+    } = this;
+    const isLoaded = brands && brands.length;
     const message = isLocalhost
       ? null
       : !isBitbucket
@@ -75,42 +94,39 @@ export class D2AuditBrands {
       : null;
 
     const options = isLoaded ? (
-      [<option value="">Choose repo...</option>].concat(
-        ...this.repos.values.sort(byName).map(repo => {
-          const selected =
-            repo.name.toUpperCase() === selectedRepo ? true : null;
-          return <option selected={selected}>{repo.name}</option>;
-        })
-      )
+      <Options
+        prompt="Choose brand..."
+        selected={selectedBrand}
+        items={this.brands.sort(byName) as any}
+      />
     ) : (
-      <option>Fetching repos...</option>
+      <option>Fetching repo data...</option>
     );
 
     return (
       <div>
-        {(message && <p>{message}</p>) || [
-          <label htmlFor="d2-repos">
-            Brand folder{' '}
-            <small>
-              {repo ? `in repo ${repo}` : ''}
-              {branch ? `: ${branch}` : ''}
-            </small>
-          </label>,
-          <select
-            id="d2-repos"
-            disabled={!isLoaded}
-            onChange={this.onChangeBrand}
-          >
-            {options}
-          </select>
-        ]}
+        {message && <p>{message}</p>}
+        <label htmlFor="d2-repos">
+          Brand folder
+          <small>
+            {repo ? ` of ${repo}` : ''}
+            {branch ? `:${branch}` : ''}
+          </small>
+        </label>
+        <select
+          id="d2-repos"
+          disabled={!isLoaded}
+          onChange={this.onChangeBrand}
+        >
+          {options}
+        </select>
       </div>
     );
   }
 }
 
 // Shared state:
-RepoState.injectProps(D2AuditBrands, ['repo', 'branch', 'brand']);
+RepoState.injectProps(D2AuditBrands, ['project', 'repo', 'branch', 'brand']);
 
 // Helper for sorting an array of file objects by name:
 function byName(fileA, fileB) {

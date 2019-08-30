@@ -5,10 +5,18 @@ import {
 } from '../types/BitbucketTypes';
 
 export default function findNode(
-  nodes: BitbucketRepoTreeNode[],
+  nodes: BitbucketRepoTreeNode | BitbucketRepoTreeNode[],
   path: string,
   type: BitbucketRepoNodeType = 'directory'
 ) {
+  // Use nodes.contents if a single node was supplied:
+  if (nodes && (nodes as BitbucketRepoTreeNode).contents) {
+    nodes = (nodes as BitbucketRepoTreeNode).contents;
+  }
+  if (!Array.isArray(nodes)) {
+    return null;
+  }
+
   const names = path.split('/');
   let name = names.shift();
 

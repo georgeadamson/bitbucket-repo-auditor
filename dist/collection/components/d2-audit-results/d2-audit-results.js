@@ -1,18 +1,40 @@
 import { h } from '@stencil/core';
 import by from '../../utils/array/filterBy';
-const byAppFolder = by({ name: 'app', type: 'directory' });
+import { findNode, getRepoName, getRepoBranchBrands as getBrands, RepoState } from '../../utils/bitbucket';
 export class D2AuditResults {
     constructor() {
         this.brand = 'dove';
-        this.getPlatformNode = () => getNode(this.tree, 'unilever-platform').contents.find(byAppFolder);
-        this.getBrandNode = () => this.getPlatformNode().contents.find(by({ name: this.brand, type: 'directory' }));
+    }
+    repoChanged() {
+        this.tree = null;
+        this.brand = null;
+        this.brandDir = null;
+    }
+    async brandChanged() {
+        const { project, repo, branch } = this;
+        // Fetch list of repos from API:
+        if (repo && branch) {
+            this.tree = await getBrands(project, repo, branch);
+        }
+        else {
+            this.tree = null;
+        }
+    }
+    treeChanged() {
+        const { tree, brand } = this;
+        if (tree && brand) {
+            const brandNode = findNode(tree, brand);
+            this.brandDir = getSimpleTreeOf(brandNode.contents);
+        }
+        else {
+            this.brandDir = null;
+        }
     }
     componentWillLoad() {
-        console.log(this.brand, this.tree);
-        this.onTreeChange();
-    }
-    onTreeChange() {
-        this.brandDir = getSimpleTreeOf(this.getBrandNode().contents);
+        // Attempt to extract repo name and branch from bitbucket url:
+        Object.assign(this, getRepoName(this.project));
+        // Fetch list of repos from API:
+        this.brandChanged();
     }
     render() {
         const { tree, brand, brandDir } = this;
@@ -28,15 +50,19 @@ export class D2AuditResults {
         const customSass = auditFolder(brandDir.sass.views, 'sass');
         const combinedResults = mergeAudits(customViews, customTemplates, customSass).sort(byFileName);
         return (h("div", null,
-            h("br", null),
-            h("br", null),
-            h("table", { class: "responsive-card-table" },
+            h("h2", null, "Showing counts of each type of customisation"),
+            h("ul", null,
+                h("li", null, "Markup = Number of customised html templates"),
+                h("li", null, "Behaviour = Number of customised javascript views"),
+                h("li", null, "Style = Number of customised CSS designs")),
+            h("button", { onClick: () => copyToClipboard(this.table) }, "Copy to clipboard"),
+            h("table", { class: "responsive-card-table", id: "d2-audit-results__table", ref: el => (this.table = el) },
                 h("thead", null,
                     h("tr", null,
-                        h("th", null, "Customised components"),
-                        h("th", null, "Html (Handlbars \"Templates\")"),
-                        h("th", null, "Javascript (JS \"Views\")"),
-                        h("th", null, "Style (SCSS)"))),
+                        h("th", null, "Component name"),
+                        h("th", null, "Markup (HBSS)"),
+                        h("th", null, "Behaviour (JS)"),
+                        h("th", null, "Style (CSS)"))),
                 h("tbody", null, combinedResults.map(component => (h("tr", null,
                     h("td", null, component.name),
                     h("td", null, component.templates && component.templates.length),
@@ -52,6 +78,23 @@ export class D2AuditResults {
         "$": ["d2-audit-results.css"]
     }; }
     static get properties() { return {
+        "project": {
+            "type": "string",
+            "mutable": false,
+            "complexType": {
+                "original": "string",
+                "resolved": "string",
+                "references": {}
+            },
+            "required": false,
+            "optional": false,
+            "docs": {
+                "tags": [],
+                "text": ""
+            },
+            "attribute": "project",
+            "reflect": false
+        },
         "repo": {
             "type": "string",
             "mutable": false,
@@ -113,7 +156,7 @@ export class D2AuditResults {
                 "references": {
                     "BitbucketRepoTreeNode": {
                         "location": "import",
-                        "path": "../../utils/types/BitbucketTypes"
+                        "path": "../../utils/bitbucket"
                     }
                 }
             },
@@ -126,20 +169,29 @@ export class D2AuditResults {
         }
     }; }
     static get states() { return {
-        "brandDir": {}
+        "brandDir": {},
+        "isLocalhost": {}
     }; }
     static get watchers() { return [{
-            "propName": "tree",
-            "methodName": "onTreeChange"
+            "propName": "repo",
+            "methodName": "repoChanged"
+        }, {
+            "propName": "branch",
+            "methodName": "brandChanged"
         }, {
             "propName": "brand",
-            "methodName": "onTreeChange"
+            "methodName": "brandChanged"
+        }, {
+            "propName": "tree",
+            "methodName": "treeChanged"
         }]; }
 }
+// Shared state:
+RepoState.injectProps(D2AuditResults, ['project', 'repo', 'branch', 'brand']);
 function auditFolder(folder = {}, filesNodeName = 'files') {
-    return subfoldersOf(folder).map(subfolder => ({
+    return childrenOf(folder, 'directory').map(subfolder => ({
         name: subfolder.name,
-        [filesNodeName]: filesOf(subfolder)
+        [filesNodeName]: childrenOf(subfolder, 'file')
     }));
 }
 function mergeAudits(...args) {
@@ -162,12 +214,6 @@ function childrenOf(folder, type) {
         return result;
     }, []);
 }
-function subfoldersOf(folder) {
-    return childrenOf(folder, 'directory');
-}
-function filesOf(folder) {
-    return childrenOf(folder, 'file');
-}
 function getSimpleTreeOf(nodes = [], filter = {}) {
     if (!Array.isArray(nodes))
         nodes = [nodes];
@@ -179,17 +225,54 @@ function getSimpleTreeOf(nodes = [], filter = {}) {
         return tree;
     }, {});
 }
-// Helper to recurse through node tree to find the one matching name:
-// Note this does not support paths. It just returns the first match by name.
-function getNode(nodes, name, type = 'directory', byName = by({ name, type })) {
-    return ((nodes &&
-        (nodes.find(byName) ||
-            nodes
-                .map(node => getNode(node.contents, name, type, byName))
-                .find(byName))) ||
-        null);
-}
 // Helper for sorting an array of file objects by name:
 function byFileName(fileA, fileB) {
     return fileA.name.localeCompare(fileB.name);
+}
+// Helper to select the specified element:
+// Very hacky. Pastedd quickly from web.
+function selectElement(el) {
+    var body = document.body, range, sel;
+    if (document.createRange && window.getSelection) {
+        range = document.createRange();
+        sel = window.getSelection();
+        sel.removeAllRanges();
+        try {
+            range.selectNodeContents(el);
+            sel.addRange(range);
+        }
+        catch (e) {
+            range.selectNode(el);
+            sel.addRange(range);
+        }
+    }
+    else if (body['createTextRange']) {
+        range = body['createTextRange']();
+        range.moveToElementText(el);
+        range.select();
+    }
+}
+// Helper to un-select the specified element:
+// Very hacky. Pastedd quickly from web.
+function clearSelection() {
+    if (window.getSelection) {
+        if (window.getSelection().empty) {
+            // Chrome
+            window.getSelection().empty();
+        }
+        else if (window.getSelection().removeAllRanges) {
+            // Firefox
+            window.getSelection().removeAllRanges();
+        }
+    }
+    else if (document['selection']) {
+        // IE?
+        document['selection'].empty();
+    }
+}
+// Not well tested!
+function copyToClipboard(el) {
+    selectElement(el);
+    document.execCommand('copy');
+    clearSelection();
 }

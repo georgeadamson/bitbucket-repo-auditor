@@ -5,9 +5,10 @@
 
 // @include foundation-global-styles;
 // @include foundation-forms;
-// @include foundation-typography;
+@include foundation-typography;
 @include foundation-table;
 
+li,
 th,
 td {
   font-family: sans-serif;

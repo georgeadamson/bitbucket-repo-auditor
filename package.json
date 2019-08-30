@@ -1,6 +1,6 @@
 {
   "name": "d2-bitbucket-repo-component-audit",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Bespoke bookmarklet to analyse a bitbucket repo while you have it open in your browser",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
