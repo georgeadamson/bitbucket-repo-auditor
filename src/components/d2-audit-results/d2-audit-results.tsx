@@ -24,27 +24,26 @@ export class D2AuditResults {
   @State() brandDir: any;
   @State() isLocalhost: boolean;
 
-  @Watch('repo')
-  repoChanged() {
-    console.log('repoChanged');
-    this.tree = null;
-    this.brand = null;
-    this.brandDir = null;
-  }
+  // @Watch('repo')
+  // repoChanged() {
+  //   this.tree = null;
+  //   this.brand = null;
+  //   this.brandDir = null;
+  // }
 
+  @Watch('repo')
   @Watch('branch')
   @Watch('brand')
   async brandChanged() {
     const { project, repo, branch } = this;
-
+    console.log('something changed');
     // Fetch list of repos from API:
     if (repo && branch) {
       this.tree = await getBrands(project, repo, branch);
     } else {
-      console.log('brandChanged else');
-      this.tree = (await import('../../data/file-tree.axe.json'))
-        .default as any;
-      console.log(this.tree);
+      // this.tree = (await import('../../data/file-tree.axe.json'))
+      //   .default as any;
+      this.tree = null;
     }
   }
 

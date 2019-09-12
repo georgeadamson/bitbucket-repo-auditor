@@ -7,7 +7,6 @@ export declare class D2AuditResults {
     tree: BitbucketRepoTreeNode[];
     brandDir: any;
     isLocalhost: boolean;
-    repoChanged(): void;
     brandChanged(): Promise<void>;
     treeChanged(): void;
     private table;

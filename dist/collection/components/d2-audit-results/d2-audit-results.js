@@ -7,23 +7,23 @@ export class D2AuditResults {
     constructor() {
         this.brand = 'dove';
     }
-    repoChanged() {
-        console.log('repoChanged');
-        this.tree = null;
-        this.brand = null;
-        this.brandDir = null;
-    }
+    // @Watch('repo')
+    // repoChanged() {
+    //   this.tree = null;
+    //   this.brand = null;
+    //   this.brandDir = null;
+    // }
     async brandChanged() {
         const { project, repo, branch } = this;
+        console.log('something changed');
         // Fetch list of repos from API:
         if (repo && branch) {
             this.tree = await getBrands(project, repo, branch);
         }
         else {
-            console.log('brandChanged else');
-            this.tree = (await import('../../data/file-tree.axe.json'))
-                .default;
-            console.log(this.tree);
+            // this.tree = (await import('../../data/file-tree.axe.json'))
+            //   .default as any;
+            this.tree = null;
         }
     }
     treeChanged() {
@@ -331,7 +331,7 @@ export class D2AuditResults {
     }; }
     static get watchers() { return [{
             "propName": "repo",
-            "methodName": "repoChanged"
+            "methodName": "brandChanged"
         }, {
             "propName": "branch",
             "methodName": "brandChanged"
