@@ -149,6 +149,7 @@ export class D2AuditResults {
         bottom: -10px;
         left: 50%;
         transform: translateX(-10px);
+        drop-shadow: 1px 1px 4px 1px rgba(0, 0, 0, .9);
       }
       .c-summary-card__heading {
         color: #313F50;
@@ -224,7 +225,7 @@ export class D2AuditResults {
               </h3>
               <p class="c-summary-card__body">
                 {totalCustomised - totalLiveCustomised}
-                <small>of {totalCustomised} components</small>
+                <small>of {totalCustomised} customised components</small>
               </p>
             </div>
           </li>
@@ -235,7 +236,7 @@ export class D2AuditResults {
                 Estimated effort to upgrade components
               </h3>
               <p class="c-summary-card__body">
-                {parseInt(String(totalEffort / 4))}
+                {parseInt(String(totalEffort / 3))}
                 <small>Person-days</small>
               </p>
             </div>
@@ -277,7 +278,7 @@ export class D2AuditResults {
                 const views = (c.views && c.views.length) || 0;
                 const styles = (c.sass && c.sass.length) || 0;
                 const total = templates + views + styles;
-                const effort = total / 4;
+                const effort = total / 3;
 
                 return (
                   <tr>

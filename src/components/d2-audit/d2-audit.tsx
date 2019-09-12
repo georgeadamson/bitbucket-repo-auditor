@@ -11,7 +11,7 @@ import {
   shadow: false
 })
 export class D2Audit {
-  @Prop() project: string = 'd2_website_repositories'; //'avinash_digital20_platform' or 'd2_website_repositories';
+  @Prop() project: string = 'd2_website_repositories'; //'avinash_digital20_platform' or 'd2_website_repositories'; // See default in repo-state.tsx
   @Prop() repo: string = 'Axe';
   @Prop() branch: string = 'develop';
   @Prop() brand: string = 'axe';

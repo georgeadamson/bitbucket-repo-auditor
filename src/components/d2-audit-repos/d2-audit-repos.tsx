@@ -44,7 +44,7 @@ export class D2AuditRepos {
 
   componentWillLoad() {
     const { project, repo } = this;
-
+    console.log('getting repos for', project);
     // Attempt to extract repo name and branch from bitbucket url:
     Object.assign(this, getRepoName(project));
 
@@ -63,8 +63,8 @@ export class D2AuditRepos {
   };
 
   render() {
-    const selectedRepo = this.repo && this.repo.toUpperCase();
     const { isLocalhost, isBitbucket, isValidRepo } = this;
+    const selectedRepo = this.repo && this.repo.toUpperCase();
     const isLoaded =
       this.repos && this.repos.values && this.repos.values.length;
     const message = isLocalhost

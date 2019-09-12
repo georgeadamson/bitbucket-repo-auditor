@@ -10,7 +10,7 @@ export interface IRepoState {
 
 export default createProviderConsumer<IRepoState>(
   {
-    project: null,
+    project: 'd2_website_repositories', //'avinash_digital20_platform' or 'd2_website_repositories';
     repo: null,
     branch: null,
     brand: null

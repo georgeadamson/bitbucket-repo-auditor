@@ -114,6 +114,7 @@ export class D2AuditResults {
         bottom: -10px;
         left: 50%;
         transform: translateX(-10px);
+        drop-shadow: 1px 1px 4px 1px rgba(0, 0, 0, .9);
       }
       .c-summary-card__heading {
         color: #313F50;
@@ -182,13 +183,13 @@ export class D2AuditResults {
                             h("small", null,
                                 "of ",
                                 totalCustomised,
-                                " components")))),
+                                " customised components")))),
                 h("li", { class: "c-summary-cards__item" },
                     h("div", { class: "c-summary-card__wrapper" },
                         h("h2", { class: "c-summary-card__heading" }, "Upgrade effort"),
                         h("h3", { class: "c-summary-card__subheading" }, "Estimated effort to upgrade components"),
                         h("p", { class: "c-summary-card__body" },
-                            parseInt(String(totalEffort / 4)),
+                            parseInt(String(totalEffort / 3)),
                             h("small", null, "Person-days"))))),
             h("section", { style: { background: '#fff', padding: '20px' } },
                 h("h2", null, "Component upgrade effort"),
@@ -210,7 +211,7 @@ export class D2AuditResults {
                         const views = (c.views && c.views.length) || 0;
                         const styles = (c.sass && c.sass.length) || 0;
                         const total = templates + views + styles;
-                        const effort = total / 4;
+                        const effort = total / 3;
                         return (h("tr", null,
                             h("td", null, c.name),
                             h("td", { style: { width: '50%' } },

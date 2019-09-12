@@ -1,13 +1,13 @@
 {
   "entries": [
-    "components/d2-audit-branches/d2-audit-branches.js",
+    "components/d2-dashboard-cta/d2-dashboard-cta.js",
+    "components/d2-stacked-bar/d2-stacked-bar.js",
     "components/d2-audit-brands/d2-audit-brands.js",
     "components/d2-audit-repos/d2-audit-repos.js",
-    "components/d2-audit/d2-audit.js",
-    "components/d2-audit-results/d2-audit-results.js",
+    "components/d2-audit-branches/d2-audit-branches.js",
     "components/d2-media-card/d2-media-card.js",
-    "components/d2-stacked-bar/d2-stacked-bar.js",
-    "components/d2-dashboard-cta/d2-dashboard-cta.js"
+    "components/d2-audit/d2-audit.js",
+    "components/d2-audit-results/d2-audit-results.js"
   ],
   "compiler": {
     "name": "@stencil/core",

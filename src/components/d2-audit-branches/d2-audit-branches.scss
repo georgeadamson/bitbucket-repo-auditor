@@ -9,4 +9,5 @@ select {
   font-weight: 300;
   line-height: 1.15;
   text-size-adjust: 100%;
+  max-width: calc(100% - 20px);
 }
