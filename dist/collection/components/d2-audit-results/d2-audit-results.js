@@ -1,11 +1,14 @@
 import { h } from '@stencil/core';
 import by from '../../utils/array/filterBy';
-import { findNode, getRepoName, getRepoBranchBrands as getBrands, RepoState } from '../../utils/bitbucket';
+import { findNode, getRepoName, getRepoBranchBrands as getBrands, RepoState
+//BitbucketRepoNodeType
+ } from '../../utils/bitbucket';
 export class D2AuditResults {
     constructor() {
         this.brand = 'dove';
     }
     repoChanged() {
+        console.log('repoChanged');
         this.tree = null;
         this.brand = null;
         this.brandDir = null;
@@ -17,13 +20,17 @@ export class D2AuditResults {
             this.tree = await getBrands(project, repo, branch);
         }
         else {
-            this.tree = null;
+            console.log('brandChanged else');
+            this.tree = (await import('../../data/file-tree.axe.json'))
+                .default;
+            console.log(this.tree);
         }
     }
     treeChanged() {
         const { tree, brand } = this;
-        if (tree && brand) {
-            const brandNode = findNode(tree, brand);
+        console.log('treeChanged');
+        if (tree /* && brand*/) {
+            const brandNode = findNode(tree, brand || 'axe');
             this.brandDir = getSimpleTreeOf(brandNode.contents);
         }
         else {
@@ -37,7 +44,7 @@ export class D2AuditResults {
         this.brandChanged();
     }
     render() {
-        const { tree, brand, brandDir } = this;
+        const { repo, tree, brand, brandDir } = this;
         // Rudimentary error handling:
         if (!tree)
             return h("p", null, "Missing `tree` json.");
@@ -49,25 +56,100 @@ export class D2AuditResults {
         const customTemplates = auditFolder(brandDir.js.templates, 'templates');
         const customSass = auditFolder(brandDir.sass.views, 'sass');
         const combinedResults = mergeAudits(customViews, customTemplates, customSass).sort(byFileName);
+        const styles = `
+      .c-summary-cards {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        margin: 0 -15px;
+        padding: 0;
+      }
+      .c-summary-cards__item {
+        display: inline-block;
+        padding: 0 15px 30px 15px;
+        box-sizing: border-box;
+        width: 25%;
+      }
+      .c-summary-card__wrapper {
+        color: rgba(0, 0, 0, 0.87);
+        border: 0;
+        position: relative;
+        font-size: 0.875rem;
+        min-width: 0;
+        word-wrap: break-word;
+        background: #fff;
+        -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+        margin-top: 30px;
+        border-radius: 6px;
+        padding: 0 15px;
+      }
+      .c-summary-card__heading {
+        color: #999;
+        font-family: var(--font-family-primary);
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 1.5em;
+        margin: 0;
+        padding-top: 10px;
+        text-align: right;
+      }
+      .c-summary-card__body {
+        color: #3c4858;
+        margin-top: 0px;
+        min-height: auto;
+        font-family: var(--font-family-primary);
+        font-size: 25.55px;
+        font-weight: 300;
+        margin-bottom: 3px;
+        text-decoration: none;
+        text-align: right;
+      }`;
         return (h("div", null,
-            h("h2", null, "Showing counts of each type of customisation"),
-            h("ul", null,
-                h("li", null, "Markup = Number of customised html templates"),
-                h("li", null, "Behaviour = Number of customised javascript views"),
-                h("li", null, "Style = Number of customised CSS designs")),
-            h("button", { onClick: () => copyToClipboard(this.table) }, "Copy to clipboard"),
+            h("style", null, styles),
+            h("h2", null, "Summary"),
+            h("p", null,
+                "Components customised by ",
+                repo || brand),
+            h("ul", { class: "c-summary-cards" },
+                h("li", { class: "c-summary-cards__item" },
+                    h("div", { class: "c-summary-card__wrapper" },
+                        h("h2", { class: "c-summary-card__heading" }, "Total components"),
+                        h("p", { class: "c-summary-card__body" }, "38"))),
+                h("li", { class: "c-summary-cards__item" },
+                    h("div", { class: "c-summary-card__wrapper" },
+                        h("h2", { class: "c-summary-card__heading" }, "Live components"),
+                        h("p", { class: "c-summary-card__body" }, "30"))),
+                h("li", { class: "c-summary-cards__item" },
+                    h("div", { class: "c-summary-card__wrapper" },
+                        h("h2", { class: "c-summary-card__heading" }, "Custom components"),
+                        h("p", { class: "c-summary-card__body" }, "38"))),
+                h("li", { class: "c-summary-cards__item" },
+                    h("div", { class: "c-summary-card__wrapper" },
+                        h("h2", { class: "c-summary-card__heading" }, "Upgrade effort"),
+                        h("p", { class: "c-summary-card__body" }, "12 days")))),
+            h("p", null,
+                h("a", { href: "#export", onClick: e => exportToFile(e.target, this.table) }, "Export to Excel")),
             h("table", { class: "responsive-card-table", id: "d2-audit-results__table", ref: el => (this.table = el) },
                 h("thead", null,
                     h("tr", null,
-                        h("th", null, "Component name"),
-                        h("th", null, "Markup (HBSS)"),
-                        h("th", null, "Behaviour (JS)"),
-                        h("th", null, "Style (CSS)"))),
-                h("tbody", null, combinedResults.map(component => (h("tr", null,
-                    h("td", null, component.name),
-                    h("td", null, component.templates && component.templates.length),
-                    h("td", null, component.views && component.views.length),
-                    h("td", null, component.sass && component.sass.length))))))));
+                        h("th", null, "Component"),
+                        h("th", null, "Customisation effort"),
+                        h("th", null, "HTML"),
+                        h("th", null, "Views"),
+                        h("th", null, "CSS"))),
+                h("tbody", null, combinedResults.map(c => {
+                    const templates = (c.templates && c.templates.length) || 0;
+                    const views = (c.views && c.views.length) || 0;
+                    const styles = (c.sass && c.sass.length) || 0;
+                    return (h("tr", null,
+                        h("td", null, c.name),
+                        h("td", null,
+                            h("d2-stacked-bar", { value1: templates, value2: views, value3: styles })),
+                        h("td", null, templates),
+                        h("td", null, views),
+                        h("td", null, styles)));
+                })))));
     }
     static get is() { return "d2-audit-results"; }
     static get encapsulation() { return "shadow"; }
@@ -229,50 +311,55 @@ function getSimpleTreeOf(nodes = [], filter = {}) {
 function byFileName(fileA, fileB) {
     return fileA.name.localeCompare(fileB.name);
 }
-// Helper to select the specified element:
-// Very hacky. Pastedd quickly from web.
-function selectElement(el) {
-    var body = document.body, range, sel;
-    if (document.createRange && window.getSelection) {
-        range = document.createRange();
-        sel = window.getSelection();
-        sel.removeAllRanges();
-        try {
-            range.selectNodeContents(el);
-            sel.addRange(range);
-        }
-        catch (e) {
-            range.selectNode(el);
-            sel.addRange(range);
-        }
-    }
-    else if (body['createTextRange']) {
-        range = body['createTextRange']();
-        range.moveToElementText(el);
-        range.select();
-    }
-}
-// Helper to un-select the specified element:
-// Very hacky. Pastedd quickly from web.
-function clearSelection() {
-    if (window.getSelection) {
-        if (window.getSelection().empty) {
-            // Chrome
-            window.getSelection().empty();
-        }
-        else if (window.getSelection().removeAllRanges) {
-            // Firefox
-            window.getSelection().removeAllRanges();
-        }
-    }
-    else if (document['selection']) {
-        // IE?
-        document['selection'].empty();
-    }
-}
-// Not well tested!
-function copyToClipboard(el) {
-    selectElement(el);
-    document.execCommand('copy');
-    clearSelection();
+// // Helper to select the specified element:
+// // Very hacky. Pastedd quickly from web.
+// function selectElement(el) {
+//   var body = document.body,
+//     range,
+//     sel;
+//   if (document.createRange && window.getSelection) {
+//     range = document.createRange();
+//     sel = window.getSelection();
+//     sel.removeAllRanges();
+//     try {
+//       range.selectNodeContents(el);
+//       sel.addRange(range);
+//     } catch (e) {
+//       range.selectNode(el);
+//       sel.addRange(range);
+//     }
+//   } else if (body['createTextRange']) {
+//     range = body['createTextRange']();
+//     range.moveToElementText(el);
+//     range.select();
+//   }
+// }
+// // Helper to un-select the specified element:
+// // Very hacky. Pastedd quickly from web.
+// function clearSelection() {
+//   if (window.getSelection) {
+//     if (window.getSelection().empty) {
+//       // Chrome
+//       window.getSelection().empty();
+//     } else if (window.getSelection().removeAllRanges) {
+//       // Firefox
+//       window.getSelection().removeAllRanges();
+//     }
+//   } else if (document['selection']) {
+//     // IE?
+//     document['selection'].empty();
+//   }
+// }
+// // Not well tested!
+// function copyToClipboard(el) {
+//   selectElement(el);
+//   document.execCommand('copy');
+//   clearSelection();
+// }
+function exportToFile(link, table, filename = 'export.xsl') {
+    var html = table.outerHTML;
+    var url = 'data:application/vnd.ms-excel,' + escape(html); // Set your html table into url
+    link.setAttribute('href', url);
+    link.setAttribute('download', filename);
+    return false;
 }

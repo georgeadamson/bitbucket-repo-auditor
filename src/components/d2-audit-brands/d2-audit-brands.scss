@@ -5,7 +5,8 @@
 
 label,
 select {
-  font-family: sans-serif;
+  font-family: var(--font-family-primary);
+  font-weight: 300;
   line-height: 1.15;
   text-size-adjust: 100%;
 }

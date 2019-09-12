@@ -10,8 +10,126 @@
 
     <script type="module" src="/build/d2-repo-tools.esm.js"></script>
     <script nomodule src="/build/d2-repo-tools.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons"
+    />
   </head>
   <body>
-    <d2-audit></d2-audit>
+    <style>
+      :root {
+        --font-family-primary: Roboto, Helvetica, Arial, sans-serif;
+      }
+      html * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      body {
+        background: #fff;
+        padding: 2rem;
+      }
+      h1 {
+        margin: 50px 0;
+      }
+      p,
+      h1,
+      h2 {
+        font-family: var(--font-family-primary);
+        font-weight: 300;
+        line-height: 1.5em;
+      }
+
+      .results-container {
+        display: flex;
+      }
+      .results-container__panel {
+        width: 400px;
+      }
+      .results-container__results {
+        width: 100%;
+      }
+
+      .c-thumbs {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        margin: 0 -10px;
+        padding: 0;
+      }
+      .c-thumbs__item {
+        display: inline-block;
+        padding: 0 10px 30px 10px;
+        box-sizing: border-box;
+        width: 33%;
+      }
+      @media screen and (min-width: 768px) {
+        .c-thumbs__item {
+          width: 25%;
+        }
+      }
+    </style>
+
+    <h1>Component track-o-matic</h1>
+
+    <section style="background: #f8f8f8; padding: 20px; height: 100vh;">
+      <h2>My brands</h2>
+      <p>Select a brand to view on-demand component metrics</p>
+
+      <ul class="c-thumbs">
+        <li class="c-thumbs__item">
+          <d2-dashboard-cta
+            href="#"
+            src="assets/axe-box.jpg"
+            heading="Axe"
+            body="65 live | 98 custom"
+            actions="US"
+          ></d2-dashboard-cta>
+        </li>
+        <li class="c-thumbs__item">
+          <d2-dashboard-cta
+            href="#"
+            src="assets/cif-box.jpg"
+            heading="Cif"
+            body="21 live | 22 custom"
+            actions="UK"
+          ></d2-dashboard-cta>
+        </li>
+        <li class="c-thumbs__item">
+          <d2-dashboard-cta
+            href="#"
+            src="assets/dove-box.jpg"
+            heading="Dove"
+            body="2098 live | 5067 custom"
+            actions="IN"
+          ></d2-dashboard-cta>
+        </li>
+        <li class="c-thumbs__item">
+          <d2-dashboard-cta
+            href="#"
+            src="assets/add-new-box.jpg"
+            heading="Brand.com"
+            body="Choose another brand"
+            actions="All sites"
+          ></d2-dashboard-cta>
+        </li>
+      </ul>
+    </section>
+
+    <br /><br /><br />
+
+    <d2-audit
+      ><div class="results-container">
+        <section class="results-container__panel">
+          <h2>Brand filters</h2>
+
+          <d2-audit-repos></d2-audit-repos>
+          <d2-audit-branches></d2-audit-branches>
+          <d2-audit-brands></d2-audit-brands>
+        </section>
+        <section class="results-container__results">
+          <d2-audit-results></d2-audit-results>
+        </section></div
+    ></d2-audit>
   </body>
 </html>

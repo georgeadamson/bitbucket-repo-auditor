@@ -8,13 +8,13 @@ import {
 @Component({
   tag: 'd2-audit',
   styleUrl: 'd2-audit.scss',
-  shadow: true
+  shadow: false
 })
 export class D2Audit {
   @Prop() project: string = 'd2_website_repositories'; //'avinash_digital20_platform' or 'd2_website_repositories';
-  @Prop() repo: string;
+  @Prop() repo: string = 'Axe';
   @Prop() branch: string = 'develop';
-  @Prop() brand: string;
+  @Prop() brand: string = 'axe';
 
   @State() isBitbucket: boolean;
   @State() isValidRepo: boolean;
@@ -26,9 +26,9 @@ export class D2Audit {
   @Listen('changebrand')
   repoChanged(e: CustomEvent) {
     const { repo, branch, brand } = e && e.detail;
-    this.repo = repo;
-    this.brand = brand;
-    this.branch = branch;
+    if (repo) this.repo = repo;
+    if (branch) this.branch = branch;
+    if (brand) this.brand = brand; // AKA app folder
   }
 
   componentWillLoad() {
@@ -48,10 +48,7 @@ export class D2Audit {
 
     return (
       <RepoState.Provider state={state}>
-        <d2-audit-repos />
-        <d2-audit-branches />
-        <d2-audit-brands />
-        <d2-audit-results />
+        <slot></slot>
       </RepoState.Provider>
     );
   }

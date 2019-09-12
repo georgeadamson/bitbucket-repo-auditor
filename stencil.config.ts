@@ -16,6 +16,7 @@ export const config: Config = {
     },
     {
       type: 'www',
+      baseUrl: 'http://www.demo.com',
       serviceWorker: null // disable service workers
     }
   ]

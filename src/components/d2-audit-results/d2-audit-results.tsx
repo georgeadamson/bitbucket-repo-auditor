@@ -6,6 +6,7 @@ import {
   getRepoBranchBrands as getBrands,
   BitbucketRepoTreeNode,
   RepoState
+  //BitbucketRepoNodeType
 } from '../../utils/bitbucket';
 
 @Component({
@@ -25,6 +26,7 @@ export class D2AuditResults {
 
   @Watch('repo')
   repoChanged() {
+    console.log('repoChanged');
     this.tree = null;
     this.brand = null;
     this.brandDir = null;
@@ -39,23 +41,26 @@ export class D2AuditResults {
     if (repo && branch) {
       this.tree = await getBrands(project, repo, branch);
     } else {
-      this.tree = null;
+      console.log('brandChanged else');
+      this.tree = (await import('../../data/file-tree.axe.json'))
+        .default as any;
+      console.log(this.tree);
     }
   }
 
   @Watch('tree')
   treeChanged() {
     const { tree, brand } = this;
-
-    if (tree && brand) {
-      const brandNode = findNode(tree, brand);
+    console.log('treeChanged');
+    if (tree /* && brand*/) {
+      const brandNode = findNode(tree, brand || 'axe');
       this.brandDir = getSimpleTreeOf(brandNode.contents);
     } else {
       this.brandDir = null;
     }
   }
 
-  private table: Element;
+  private table: HTMLTableElement;
 
   componentWillLoad() {
     // Attempt to extract repo name and branch from bitbucket url:
@@ -66,7 +71,7 @@ export class D2AuditResults {
   }
 
   render() {
-    const { tree, brand, brandDir } = this;
+    const { repo, tree, brand, brandDir } = this;
 
     // Rudimentary error handling:
     if (!tree) return <p>Missing `tree` json.</p>;
@@ -84,18 +89,105 @@ export class D2AuditResults {
       customSass
     ).sort(byFileName);
 
+    const styles = `
+      .c-summary-cards {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        margin: 0 -15px;
+        padding: 0;
+      }
+      .c-summary-cards__item {
+        display: inline-block;
+        padding: 0 15px 30px 15px;
+        box-sizing: border-box;
+        width: 25%;
+      }
+      .c-summary-card__wrapper {
+        color: rgba(0, 0, 0, 0.87);
+        border: 0;
+        position: relative;
+        font-size: 0.875rem;
+        min-width: 0;
+        word-wrap: break-word;
+        background: #fff;
+        -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+        margin-top: 30px;
+        border-radius: 6px;
+        padding: 0 15px;
+      }
+      .c-summary-card__heading {
+        color: #999;
+        font-family: var(--font-family-primary);
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 1.5em;
+        margin: 0;
+        padding-top: 10px;
+        text-align: right;
+      }
+      .c-summary-card__body {
+        color: #3c4858;
+        margin-top: 0px;
+        min-height: auto;
+        font-family: var(--font-family-primary);
+        font-size: 25.55px;
+        font-weight: 300;
+        margin-bottom: 3px;
+        text-decoration: none;
+        text-align: right;
+      }`;
+
     return (
       <div>
-        <h2>Showing counts of each type of customisation</h2>
-        <ul>
+        <style>{styles}</style>
+        <h2>Summary</h2>
+        <p>Components customised by {repo || brand}</p>
+
+        <ul class="c-summary-cards">
+          <li class="c-summary-cards__item">
+            <div class="c-summary-card__wrapper">
+              <h2 class="c-summary-card__heading">Total components</h2>
+              <p class="c-summary-card__body">38</p>
+            </div>
+          </li>
+          <li class="c-summary-cards__item">
+            <div class="c-summary-card__wrapper">
+              <h2 class="c-summary-card__heading">Live components</h2>
+              <p class="c-summary-card__body">30</p>
+            </div>
+          </li>
+          <li class="c-summary-cards__item">
+            <div class="c-summary-card__wrapper">
+              <h2 class="c-summary-card__heading">Custom components</h2>
+              <p class="c-summary-card__body">38</p>
+            </div>
+          </li>
+          <li class="c-summary-cards__item">
+            <div class="c-summary-card__wrapper">
+              <h2 class="c-summary-card__heading">Upgrade effort</h2>
+              <p class="c-summary-card__body">12 days</p>
+            </div>
+          </li>
+        </ul>
+
+        {/* <ul>
           <li>Markup = Number of customised html templates</li>
           <li>Behaviour = Number of customised javascript views</li>
           <li>Style = Number of customised CSS designs</li>
-        </ul>
+        </ul> */}
 
-        <button onClick={() => copyToClipboard(this.table)}>
-          Copy to clipboard
-        </button>
+        <p>
+          <a
+            href="#export"
+            onClick={e =>
+              exportToFile(e.target as HTMLAnchorElement, this.table)
+            }
+          >
+            Export to Excel
+          </a>
+        </p>
 
         <table
           class="responsive-card-table"
@@ -104,21 +196,35 @@ export class D2AuditResults {
         >
           <thead>
             <tr>
-              <th>Component name</th>
-              <th>Markup (HBSS)</th>
-              <th>Behaviour (JS)</th>
-              <th>Style (CSS)</th>
+              <th>Component</th>
+              <th>Customisation effort</th>
+              <th>HTML</th>
+              <th>Views</th>
+              <th>CSS</th>
             </tr>
           </thead>
           <tbody>
-            {combinedResults.map(component => (
-              <tr>
-                <td>{component.name}</td>
-                <td>{component.templates && component.templates.length}</td>
-                <td>{component.views && component.views.length}</td>
-                <td>{component.sass && component.sass.length}</td>
-              </tr>
-            ))}
+            {combinedResults.map(c => {
+              const templates = (c.templates && c.templates.length) || 0;
+              const views = (c.views && c.views.length) || 0;
+              const styles = (c.sass && c.sass.length) || 0;
+
+              return (
+                <tr>
+                  <td>{c.name}</td>
+                  <td>
+                    <d2-stacked-bar
+                      value1={templates}
+                      value2={views}
+                      value3={styles}
+                    ></d2-stacked-bar>
+                  </td>
+                  <td>{templates}</td>
+                  <td>{views}</td>
+                  <td>{styles}</td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
@@ -181,50 +287,62 @@ function byFileName(fileA, fileB) {
   return fileA.name.localeCompare(fileB.name);
 }
 
-// Helper to select the specified element:
-// Very hacky. Pastedd quickly from web.
-function selectElement(el) {
-  var body = document.body,
-    range,
-    sel;
-  if (document.createRange && window.getSelection) {
-    range = document.createRange();
-    sel = window.getSelection();
-    sel.removeAllRanges();
-    try {
-      range.selectNodeContents(el);
-      sel.addRange(range);
-    } catch (e) {
-      range.selectNode(el);
-      sel.addRange(range);
-    }
-  } else if (body['createTextRange']) {
-    range = body['createTextRange']();
-    range.moveToElementText(el);
-    range.select();
-  }
-}
+// // Helper to select the specified element:
+// // Very hacky. Pastedd quickly from web.
+// function selectElement(el) {
+//   var body = document.body,
+//     range,
+//     sel;
+//   if (document.createRange && window.getSelection) {
+//     range = document.createRange();
+//     sel = window.getSelection();
+//     sel.removeAllRanges();
+//     try {
+//       range.selectNodeContents(el);
+//       sel.addRange(range);
+//     } catch (e) {
+//       range.selectNode(el);
+//       sel.addRange(range);
+//     }
+//   } else if (body['createTextRange']) {
+//     range = body['createTextRange']();
+//     range.moveToElementText(el);
+//     range.select();
+//   }
+// }
 
-// Helper to un-select the specified element:
-// Very hacky. Pastedd quickly from web.
-function clearSelection() {
-  if (window.getSelection) {
-    if (window.getSelection().empty) {
-      // Chrome
-      window.getSelection().empty();
-    } else if (window.getSelection().removeAllRanges) {
-      // Firefox
-      window.getSelection().removeAllRanges();
-    }
-  } else if (document['selection']) {
-    // IE?
-    document['selection'].empty();
-  }
-}
+// // Helper to un-select the specified element:
+// // Very hacky. Pastedd quickly from web.
+// function clearSelection() {
+//   if (window.getSelection) {
+//     if (window.getSelection().empty) {
+//       // Chrome
+//       window.getSelection().empty();
+//     } else if (window.getSelection().removeAllRanges) {
+//       // Firefox
+//       window.getSelection().removeAllRanges();
+//     }
+//   } else if (document['selection']) {
+//     // IE?
+//     document['selection'].empty();
+//   }
+// }
 
-// Not well tested!
-function copyToClipboard(el) {
-  selectElement(el);
-  document.execCommand('copy');
-  clearSelection();
+// // Not well tested!
+// function copyToClipboard(el) {
+//   selectElement(el);
+//   document.execCommand('copy');
+//   clearSelection();
+// }
+
+function exportToFile(
+  link: HTMLAnchorElement,
+  table: HTMLTableElement,
+  filename = 'export.xsl'
+) {
+  var html = table.outerHTML;
+  var url = 'data:application/vnd.ms-excel,' + escape(html); // Set your html table into url
+  link.setAttribute('href', url);
+  link.setAttribute('download', filename);
+  return false;
 }

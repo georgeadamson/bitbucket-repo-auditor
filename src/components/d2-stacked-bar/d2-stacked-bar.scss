@@ -1,0 +1,25 @@
+.c-bar {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.c-bar__item {
+  background-color: #f1453d;
+  display: inline-block;
+  padding: 0.5rem;
+  width: calc(var(--bar-item-percent) * 1%);
+  min-width: 20px;
+  text-align: center;
+
+  :nth-child(2) & {
+    background-color: #fd9727;
+  }
+  :nth-child(3) & {
+    background-color: #288ae2;
+  }
+}

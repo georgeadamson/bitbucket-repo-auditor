@@ -1,0 +1,90 @@
+.c-thumb {
+  color: rgba(0, 0, 0, 0.87);
+  border: 0;
+  position: relative;
+  font-size: 0.875rem;
+  min-width: 0;
+  word-wrap: break-word;
+  background: #fff;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+  margin-top: 30px;
+  border-radius: 6px;
+  padding: 0 15px;
+}
+
+.c-thumb__link {
+  text-decoration: none;
+}
+
+.c-thumb__img-wrapper {
+  float: left;
+  padding: 15px;
+  margin-top: -20px;
+  margin-right: 15px;
+  border-radius: 3px;
+  background-color: #fff;
+
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14),
+    0 7px 10px -5px rgba(255, 152, 0, 0.4);
+}
+.c-thumb__img {
+  object-fit: contain;
+  width: 56px;
+  height: 56px;
+  overflow: unset;
+  font-size: 36px;
+  text-align: center;
+  line-height: 56px;
+  margin-bottom: 1px;
+  transition: transform 0.2s ease-out;
+}
+.c-thumb__link:hover .c-thumb__img,
+.c-thumb__link:focus .c-thumb__img {
+  transform: scale(1.1);
+}
+.c-thumb__heading {
+  color: #999;
+  font-family: var(--font-family-primary);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.5em;
+  margin: 0;
+  padding-top: 10px;
+  text-align: right;
+}
+.c-thumb__body {
+  color: #3c4858;
+  margin-top: 0px;
+  min-height: auto;
+  font-family: var(--font-family-primary);
+  font-size: 25.55px;
+  font-weight: 300;
+  margin-bottom: 3px;
+  text-decoration: none;
+  text-align: right;
+}
+.c-thumb__actions {
+  border-top: 1px solid #eee;
+  margin: 40px 0 10px;
+  display: flex;
+  font-family: var(--font-family-primary);
+  align-items: center;
+  padding: 20px 0 20px 30px;
+  border-radius: 0;
+  justify-content: space-between;
+  background-color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' version='1'%3E%3Cpath fill='none' d='M0 0h50v50H0z'/%3E%3Ccircle cx='25' cy='25' r='24' fill='none' stroke='%23000' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2'/%3E%3Cellipse cx='25' cy='25' fill='none' stroke='%23000' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' rx='12' ry='24'/%3E%3Cpath fill='none' stroke='%23000' stroke-miterlimit='10' stroke-width='2' d='M6 40c5-2 11-4 19-4 7 0 14 2 18 4M44 10c-5 2-11 4-19 4-7 0-14-2-18-4M1 25h48M25 1v48'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: 0 50%;
+}
+
+.c-thumb__img-wrapper--axe {
+  background: #000;
+}
+.c-thumb__img-wrapper--cif {
+  background: linear-gradient(to right, #165648, #20856e);
+}
+.c-thumb__img-wrapper--dove {
+  background: #fff;
+}

@@ -34,6 +34,25 @@ export namespace Components {
     'repo': string;
     'tree': BitbucketRepoTreeNode[];
   }
+  interface D2DashboardCta {
+    'alt': string;
+    'href': any;
+    'src': any;
+  }
+  interface D2MediaCard {
+    'actions': any;
+    'alt': string;
+    'body': any;
+    'heading': string;
+    'href': any;
+    'mode': any;
+    'src': any;
+  }
+  interface D2StackedBar {
+    'value1': number;
+    'value2': number;
+    'value3': number;
+  }
 }
 
 declare global {
@@ -68,12 +87,33 @@ declare global {
     prototype: HTMLD2AuditResultsElement;
     new (): HTMLD2AuditResultsElement;
   };
+
+  interface HTMLD2DashboardCtaElement extends Components.D2DashboardCta, HTMLStencilElement {}
+  var HTMLD2DashboardCtaElement: {
+    prototype: HTMLD2DashboardCtaElement;
+    new (): HTMLD2DashboardCtaElement;
+  };
+
+  interface HTMLD2MediaCardElement extends Components.D2MediaCard, HTMLStencilElement {}
+  var HTMLD2MediaCardElement: {
+    prototype: HTMLD2MediaCardElement;
+    new (): HTMLD2MediaCardElement;
+  };
+
+  interface HTMLD2StackedBarElement extends Components.D2StackedBar, HTMLStencilElement {}
+  var HTMLD2StackedBarElement: {
+    prototype: HTMLD2StackedBarElement;
+    new (): HTMLD2StackedBarElement;
+  };
   interface HTMLElementTagNameMap {
     'd2-audit': HTMLD2AuditElement;
     'd2-audit-branches': HTMLD2AuditBranchesElement;
     'd2-audit-brands': HTMLD2AuditBrandsElement;
     'd2-audit-repos': HTMLD2AuditReposElement;
     'd2-audit-results': HTMLD2AuditResultsElement;
+    'd2-dashboard-cta': HTMLD2DashboardCtaElement;
+    'd2-media-card': HTMLD2MediaCardElement;
+    'd2-stacked-bar': HTMLD2StackedBarElement;
   }
 }
 
@@ -104,6 +144,25 @@ declare namespace LocalJSX {
     'repo'?: string;
     'tree'?: BitbucketRepoTreeNode[];
   }
+  interface D2DashboardCta extends JSXBase.HTMLAttributes<HTMLD2DashboardCtaElement> {
+    'alt'?: string;
+    'href'?: any;
+    'src'?: any;
+  }
+  interface D2MediaCard extends JSXBase.HTMLAttributes<HTMLD2MediaCardElement> {
+    'actions'?: any;
+    'alt'?: string;
+    'body'?: any;
+    'heading'?: string;
+    'href'?: any;
+    'mode'?: any;
+    'src'?: any;
+  }
+  interface D2StackedBar extends JSXBase.HTMLAttributes<HTMLD2StackedBarElement> {
+    'value1'?: number;
+    'value2'?: number;
+    'value3'?: number;
+  }
 
   interface IntrinsicElements {
     'd2-audit': D2Audit;
@@ -111,6 +170,9 @@ declare namespace LocalJSX {
     'd2-audit-brands': D2AuditBrands;
     'd2-audit-repos': D2AuditRepos;
     'd2-audit-results': D2AuditResults;
+    'd2-dashboard-cta': D2DashboardCta;
+    'd2-media-card': D2MediaCard;
+    'd2-stacked-bar': D2StackedBar;
   }
 }
 

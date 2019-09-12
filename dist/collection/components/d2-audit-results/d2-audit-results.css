@@ -522,10 +522,18 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   overflow-x: auto;
 }
 
+p,
 li,
 th,
 td {
-  font-family: sans-serif;
+  font-family: var(--font-family-primary);
+  font-weight: 300;
   line-height: 1.15;
   text-size-adjust: 100%;
+}
+p a,
+li a,
+th a,
+td a {
+  text-decoration: underline;
 }

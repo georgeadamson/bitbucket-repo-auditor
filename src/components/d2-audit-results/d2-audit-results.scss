@@ -8,10 +8,16 @@
 @include foundation-typography;
 @include foundation-table;
 
+p,
 li,
 th,
 td {
-  font-family: sans-serif;
+  font-family: var(--font-family-primary);
+  font-weight: 300;
   line-height: 1.15;
   text-size-adjust: 100%;
+
+  a {
+    text-decoration: underline;
+  }
 }

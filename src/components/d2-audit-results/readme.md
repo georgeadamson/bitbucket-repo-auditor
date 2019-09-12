@@ -7,10 +7,13 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type                          | Default     |
-| -------- | --------- | ----------- | ----------------------------- | ----------- |
-| `brand`  | `brand`   |             | `string`                      | `'dove'`    |
-| `tree`   | --        |             | `BitbucketRepoTreeNode[]` | `undefined` |
+| Property  | Attribute | Description | Type                      | Default     |
+| --------- | --------- | ----------- | ------------------------- | ----------- |
+| `branch`  | `branch`  |             | `string`                  | `undefined` |
+| `brand`   | `brand`   |             | `string`                  | `'dove'`    |
+| `project` | `project` |             | `string`                  | `undefined` |
+| `repo`    | `repo`    |             | `string`                  | `undefined` |
+| `tree`    | --        |             | `BitbucketRepoTreeNode[]` | `undefined` |
 
 
 ## Dependencies
