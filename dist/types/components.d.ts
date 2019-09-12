@@ -49,6 +49,8 @@ export namespace Components {
     'src': any;
   }
   interface D2StackedBar {
+    'label': string;
+    'total': number;
     'value1': number;
     'value2': number;
     'value3': number;
@@ -159,6 +161,8 @@ declare namespace LocalJSX {
     'src'?: any;
   }
   interface D2StackedBar extends JSXBase.HTMLAttributes<HTMLD2StackedBarElement> {
+    'label'?: string;
+    'total'?: number;
     'value1'?: number;
     'value2'?: number;
     'value3'?: number;

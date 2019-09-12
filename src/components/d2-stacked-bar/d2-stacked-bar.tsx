@@ -9,37 +9,45 @@ export class D2AuditBranches {
   @Prop() value1: number;
   @Prop() value2: number;
   @Prop() value3: number;
+  @Prop() total: number;
+  @Prop() label: string;
 
   render() {
-    const { value1, value2, value3 } = this;
-    const total = value1 + value2 + value3;
+    const {
+      value1,
+      value2,
+      value3,
+      label,
+      total = (value1 || 0) + (value2 || 0) + (value3 || 0) || 1
+    } = this;
 
     return (
       <ul class="c-bar">
-        <li>
-          <div
-            class="c-bar__item"
-            style={{ '--bar-item-percent': ((value1 / total) * 100) as any }}
-          >
-            {value1}
-          </div>
+        <li
+          class="c-bar__item"
+          style={{ '--bar-item-percent': ((value1 / total) * 100) as any }}
+        >
+          {/* <div>{value1}</div> */}
+          <span class="c-bar__label">{label}</span>
         </li>
-        <li>
-          <div
+        {!Number.isNaN(value2) && (
+          <li
             class="c-bar__item"
             style={{ '--bar-item-percent': ((value2 / total) * 100) as any }}
           >
-            {value2}
-          </div>
-        </li>
-        <li>
-          <div
+            <div>{value2}</div>
+            <span class="c-bar__label">{label}</span>
+          </li>
+        )}
+        {!Number.isNaN(value3) && (
+          <li
             class="c-bar__item"
             style={{ '--bar-item-percent': ((value3 / total) * 100) as any }}
           >
-            {value3}
-          </div>
-        </li>
+            <div>{value3}</div>
+            <span class="c-bar__label">{label}</span>
+          </li>
+        )}
       </ul>
     );
   }

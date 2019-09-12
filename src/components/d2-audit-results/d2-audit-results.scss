@@ -21,3 +21,7 @@ td {
     text-decoration: underline;
   }
 }
+
+tbody tr:nth-child(even) {
+  background-color: transparent;
+}

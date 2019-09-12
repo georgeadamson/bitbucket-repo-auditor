@@ -87,8 +87,24 @@ export class D2AuditResults {
       customViews,
       customTemplates,
       customSass
-    ).sort(byFileName);
+    ).sort(byTotal);
 
+    let limit = 1;
+    let totalEffort = 0;
+    const totalCustomised = combinedResults.length;
+    const totalLive = parseInt(String(totalCustomised * 0.8));
+    const totalLiveCustomised = parseInt(String(totalLive * 0.8));
+
+    combinedResults.map(c => {
+      const templates = (c.templates && c.templates.length) || 0;
+      const views = (c.views && c.views.length) || 0;
+      const styles = (c.sass && c.sass.length) || 0;
+      const total = templates + views + styles;
+      limit = Math.max(limit, total);
+      totalEffort += total;
+    });
+
+    // Styles added kast minute!
     const styles = `
       .c-summary-cards {
         display: flex;
@@ -102,6 +118,7 @@ export class D2AuditResults {
         padding: 0 15px 30px 15px;
         box-sizing: border-box;
         width: 25%;
+        cursor: pointer;
       }
       .c-summary-card__wrapper {
         color: rgba(0, 0, 0, 0.87);
@@ -115,118 +132,178 @@ export class D2AuditResults {
         box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
         margin-top: 30px;
         border-radius: 6px;
-        padding: 0 15px;
+        padding: 0 15px 20px 15px;
+      }
+      .selected .c-summary-card__wrapper  {
+        box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, .9);
+        transform: translateY(10px);
+      }
+      .selected .c-summary-card__wrapper:after {
+        content: "";
+        display: inline-block;
+        border-style: solid;
+        border-width: 10px 10px 0 10px;
+        border-color-bottom: #000;
+        border-color: #000 transparent;
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-10px);
       }
       .c-summary-card__heading {
+        color: #313F50;
+        font-family: var(--font-family-primary);
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 1.5;
+        xmin-height: 3em;
+        margin: 0;
+        padding-top: 10px;
+        text-align: left;
+      }
+      .c-summary-card__subheading {
         color: #999;
         font-family: var(--font-family-primary);
         font-weight: 300;
         font-size: 14px;
-        line-height: 1.5em;
+        line-height: 1.5;
+        min-height: 3em;
         margin: 0;
         padding-top: 10px;
-        text-align: right;
+        text-align: left;
       }
       .c-summary-card__body {
         color: #3c4858;
         margin-top: 0px;
         min-height: auto;
         font-family: var(--font-family-primary);
-        font-size: 25.55px;
+        font-size: 60px;
         font-weight: 300;
-        margin-bottom: 3px;
+        margin: 28px 0 0 0;
         text-decoration: none;
-        text-align: right;
+        text-align: center;
+      }
+      .c-summary-card__body small {
+        color: #999;
+        display: block;
+        font-size: 12px;
       }`;
 
     return (
-      <div>
+      <div style={{ background: '#F8F8F8', padding: '20px' }}>
         <style>{styles}</style>
-        <h2>Summary</h2>
-        <p>Components customised by {repo || brand}</p>
 
         <ul class="c-summary-cards">
           <li class="c-summary-cards__item">
             <div class="c-summary-card__wrapper">
-              <h2 class="c-summary-card__heading">Total components</h2>
-              <p class="c-summary-card__body">38</p>
+              <h2 class="c-summary-card__heading">Active components</h2>
+              <h3 class="c-summary-card__subheading">
+                Components currently in use
+              </h3>
+              <p class="c-summary-card__body">
+                {totalLive}
+                <small>of 136 components</small>
+              </p>
+            </div>
+          </li>
+          <li class="c-summary-cards__item selected">
+            <div class="c-summary-card__wrapper">
+              <h2 class="c-summary-card__heading">Customised components</h2>
+              <h3 class="c-summary-card__subheading">Customised components</h3>
+              <p class="c-summary-card__body">
+                {totalCustomised}
+                <small>of which {totalLiveCustomised} are in use</small>
+              </p>
             </div>
           </li>
           <li class="c-summary-cards__item">
             <div class="c-summary-card__wrapper">
-              <h2 class="c-summary-card__heading">Live components</h2>
-              <p class="c-summary-card__body">30</p>
-            </div>
-          </li>
-          <li class="c-summary-cards__item">
-            <div class="c-summary-card__wrapper">
-              <h2 class="c-summary-card__heading">Custom components</h2>
-              <p class="c-summary-card__body">38</p>
+              <h2 class="c-summary-card__heading">Inactive components</h2>
+              <h3 class="c-summary-card__subheading">
+                Customised components not in use
+              </h3>
+              <p class="c-summary-card__body">
+                {totalCustomised - totalLiveCustomised}
+                <small>of {totalCustomised} components</small>
+              </p>
             </div>
           </li>
           <li class="c-summary-cards__item">
             <div class="c-summary-card__wrapper">
               <h2 class="c-summary-card__heading">Upgrade effort</h2>
-              <p class="c-summary-card__body">12 days</p>
+              <h3 class="c-summary-card__subheading">
+                Estimated effort to upgrade components
+              </h3>
+              <p class="c-summary-card__body">
+                {parseInt(String(totalEffort / 4))}
+                <small>Person-days</small>
+              </p>
             </div>
           </li>
         </ul>
 
-        {/* <ul>
-          <li>Markup = Number of customised html templates</li>
-          <li>Behaviour = Number of customised javascript views</li>
-          <li>Style = Number of customised CSS designs</li>
-        </ul> */}
+        <section style={{ background: '#fff', padding: '20px' }}>
+          <h2>Component upgrade effort</h2>
+          <p>Components customised by {repo || brand}</p>
 
-        <p>
-          <a
-            href="#export"
-            onClick={e =>
-              exportToFile(e.target as HTMLAnchorElement, this.table)
-            }
+          <p style={{ float: 'right' }}>
+            <a
+              href="#export"
+              onClick={e =>
+                exportToFile(e.target as HTMLAnchorElement, this.table)
+              }
+            >
+              Export to Excel
+            </a>
+          </p>
+
+          <table
+            class="responsive-card-table"
+            id="d2-audit-results__table"
+            ref={el => (this.table = el)}
           >
-            Export to Excel
-          </a>
-        </p>
+            <thead>
+              <tr>
+                <th>Component</th>
+                <th>Customisation effort (days)</th>
+                <th>HTML</th>
+                <th>JS</th>
+                <th>CSS</th>
+              </tr>
+            </thead>
+            <tbody>
+              {combinedResults.map(c => {
+                const templates = (c.templates && c.templates.length) || 0;
+                const views = (c.views && c.views.length) || 0;
+                const styles = (c.sass && c.sass.length) || 0;
+                const total = templates + views + styles;
+                const effort = total / 4;
 
-        <table
-          class="responsive-card-table"
-          id="d2-audit-results__table"
-          ref={el => (this.table = el)}
-        >
-          <thead>
-            <tr>
-              <th>Component</th>
-              <th>Customisation effort</th>
-              <th>HTML</th>
-              <th>Views</th>
-              <th>CSS</th>
-            </tr>
-          </thead>
-          <tbody>
-            {combinedResults.map(c => {
-              const templates = (c.templates && c.templates.length) || 0;
-              const views = (c.views && c.views.length) || 0;
-              const styles = (c.sass && c.sass.length) || 0;
-
-              return (
-                <tr>
-                  <td>{c.name}</td>
-                  <td>
-                    <d2-stacked-bar
-                      value1={templates}
-                      value2={views}
-                      value3={styles}
-                    ></d2-stacked-bar>
-                  </td>
-                  <td>{templates}</td>
-                  <td>{views}</td>
-                  <td>{styles}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+                return (
+                  <tr>
+                    <td>{c.name}</td>
+                    <td style={{ width: '50%' }}>
+                      <d2-stacked-bar
+                        value1={parseInt(String((total / limit) * 100))}
+                        // value2={views}
+                        // value3={styles}
+                        total={100}
+                        label={
+                          effort < 1
+                            ? '<1d'
+                            : String(parseInt(String(effort))) + 'd'
+                        }
+                      ></d2-stacked-bar>
+                    </td>
+                    <td>{templates}</td>
+                    <td>{views}</td>
+                    <td>{styles}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </section>
       </div>
     );
   }
@@ -283,8 +360,21 @@ function getSimpleTreeOf(nodes = [], filter = {}) {
 }
 
 // Helper for sorting an array of file objects by name:
-function byFileName(fileA, fileB) {
-  return fileA.name.localeCompare(fileB.name);
+// function byFileName(fileA, fileB) {
+//   return fileA.name.localeCompare(fileB.name);
+// }
+
+function byTotal(a, b) {
+  const totalA = getTotal(a);
+  const totalB = getTotal(b);
+  return totalA === totalB ? 0 : totalA > totalB ? -1 : 1;
+}
+
+function getTotal(c) {
+  const templates = (c.templates && c.templates.length) || 0;
+  const views = (c.views && c.views.length) || 0;
+  const styles = (c.sass && c.sass.length) || 0;
+  return templates + views + styles;
 }
 
 // // Helper to select the specified element:
